@@ -20,6 +20,7 @@ from fastapi import Request
 from fastapi.responses import JSONResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 
+from aktools.core.investing import fetch_investing_data, is_investing_item
 from aktools.datasets import get_pyscript_html, get_template_path
 from aktools.login.user_login import User, get_current_active_user
 
@@ -48,6 +49,11 @@ _cache: Dict[Tuple[str, str], Dict[str, Any]] = {}
 
 def _make_cache_key(item_id: str, request: Request) -> Tuple[str, str]:
     symbol = (request.query_params.get("symbol") or "").strip()
+    if not symbol and is_investing_item(item_id):
+        symbol = (
+            (request.query_params.get("symbols") or request.query_params.get("Symbols") or "").strip()
+            or (request.query_params.get("investing_id") or "").strip()
+        )
     return item_id, symbol
 
 
@@ -112,7 +118,22 @@ def root(
 
     interface_list = dir(ak)
     decode_params = urllib.parse.unquote(str(request.query_params))
-    # print(decode_params)
+
+    if is_investing_item(item_id):
+        params = {k: (v or "") for k, v in request.query_params.items()}
+        content, error = fetch_investing_data(item_id, params)
+        if error is None and content is not None:
+            _set_cache_content(cache_key, content)
+            return JSONResponse(status_code=status.HTTP_200_OK, content=content)
+        cached_content = _get_cached_content(cache_key, allow_stale=True)
+        if cached_content is not None:
+            return JSONResponse(status_code=status.HTTP_200_OK, content=cached_content)
+        err_msg = str(error) if error else "数据为空"
+        return JSONResponse(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            content={"error": f"Investing 数据拉取失败: {err_msg}"},
+        )
+
     if item_id not in interface_list:
         cached_content = _get_cached_content(cache_key, allow_stale=True)
         if cached_content is not None:
@@ -172,9 +193,26 @@ def root(request: Request, item_id: str):
         logger.info(f"命中缓存: {item_id}")
         return JSONResponse(status_code=status.HTTP_200_OK, content=cached_content)
 
+    if is_investing_item(item_id):
+        params = {k: (v or "") for k, v in request.query_params.items()}
+        content, error = fetch_investing_data(item_id, params)
+        if error is None and content is not None:
+            _set_cache_content(cache_key, content)
+            logger.info(f"获取到 Investing {item_id} 的数据")
+            return JSONResponse(status_code=status.HTTP_200_OK, content=content)
+        cached_content = _get_cached_content(cache_key, allow_stale=True)
+        if cached_content is not None:
+            logger.info(f"Investing 抓取失败，返回缓存: {item_id}")
+            return JSONResponse(status_code=status.HTTP_200_OK, content=cached_content)
+        err_msg = str(error) if error else "数据为空"
+        logger.info(f"Investing 数据拉取失败: {item_id} - {err_msg}")
+        return JSONResponse(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            content={"error": f"Investing 数据拉取失败: {err_msg}"},
+        )
+
     interface_list = dir(ak)
     decode_params = urllib.parse.unquote(str(request.query_params))
-    # print(decode_params)
     if item_id not in interface_list:
         logger.info("未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz")
         cached_content = _get_cached_content(cache_key, allow_stale=True)

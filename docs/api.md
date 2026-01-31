@@ -115,10 +115,11 @@
 
 ---
 
-## 三、数据接口（AKShare 动态接口）
+## 三、数据接口（AKShare 与 Investing）
 
-AKTools 将 [AKShare](https://akshare.akfamily.xyz/) 的 Python 接口暴露为 HTTP API。  
-可用接口名与 AKShare 模块中的函数名一致（如 `stock_zh_a_hist`、`stock_dxsyl_em` 等），完整列表与参数以 [AKShare 官方文档](https://akshare.akfamily.xyz/) 为准。
+AKTools 支持两类数据源：  
+1）**[AKShare](https://akshare.akfamily.xyz/)**：`item_id` 与 AKShare 模块中的函数名一致（如 `stock_zh_a_hist`、`stock_dxsyl_em` 等），完整列表与参数以 [AKShare 官方文档](https://akshare.akfamily.xyz/) 为准。  
+2）**Investing（cn.investing.com）**：`item_id` 为固定名称（如 `investing_index`、`investing_stock_global` 等），见下方「三B、Investing 数据接口」。
 
 ### 5. 公开数据接口（无需登录）
 
@@ -221,6 +222,130 @@ Authorization: Bearer akshare
 
 ---
 
+## 三B、Investing 数据接口（cn.investing.com）
+
+数据来源为 [cn.investing.com](https://cn.investing.com/)（通过 [investiny](https://pypi.org/project/investiny/) 访问公开数据，无需登录）。  
+与 AKShare 接口共用同一 URL 形式：`GET {BASE_URL}/api/public/{item_id}` 或 `GET {BASE_URL}/api/private/{item_id}`，**item_id** 使用下表所列的固定名称。  
+**限频与缓存**：建议控制请求频率，避免封禁；服务端对同一请求（api + symbol/investing_id）有 1 分钟热点缓存，爬取失败时会返回最近一次成功缓存（若有）。
+
+### Investing 接口清单
+
+| item_id                | 说明                       |
+| ---------------------- | -------------------------- |
+| investing_index        | 指数                       |
+| investing_stock_global | 全球股票（A 股、港股以外） |
+| investing_futures      | 期货                       |
+| investing_fx           | 货币（外汇）               |
+| investing_etf          | 交易所交易基金             |
+| investing_bond         | 国债                       |
+| investing_fund         | 基金                       |
+| investing_crypto       | 虚拟货币                   |
+
+### Investing 官网页面与 API 对应
+
+| 官网页面 | 链接 | 对应 item_id |
+| -------- | ---- | ------------ |
+| 虚拟货币 | [cn.investing.com/crypto/currencies](https://cn.investing.com/crypto/currencies) | `investing_crypto` |
+| 热门股票 | [cn.investing.com/equities/trending-stocks](https://cn.investing.com/equities/trending-stocks) | `investing_stock_global` |
+| 主要指数 | [cn.investing.com/indices/major-indices](https://cn.investing.com/indices/major-indices) | `investing_index` |
+
+**示例**：要拉取「主要指数」页面对应的列表，可请求 `GET {BASE_URL}/api/public/investing_index?limit=20`；要拉取「虚拟货币」实时行情，可请求 `GET {BASE_URL}/api/public/investing_crypto?symbols=BTC,ETH`。
+
+### 三种用法
+
+1. **拉取实时行情（quotes）**  
+   传入 `symbols` 时，先按类型将资产名称/代码解析为 Investing 的 investing_id，再调用 tvc6 quotes 接口获取含最新价、涨跌等字段的实时行情。
+
+   **Query 参数**：
+
+   | 参数名    | 类型   | 必填 | 说明                           |
+   | --------- | ------ | ---- | ------------------------------ |
+   | symbols   | string | 是   | 资产代码，多个用英文逗号分隔   |
+   | exchange  | string | 否   | 交易所（解析时用于精确匹配）   |
+
+   **请求示例**：
+
+   ```http
+   GET {BASE_URL}/api/public/investing_stock_global?symbols=AAPL
+   GET {BASE_URL}/api/public/investing_stock_global?symbols=AAPL,MSFT
+   GET {BASE_URL}/api/public/investing_crypto?symbols=BTC,ETH
+   ```
+
+   **返回**：JSON 数组，每项为一条实时行情（含 `symbol` 及 Investing 返回的行情字段，如 `lp` 最新价、`ch` 涨跌、`pcp` 涨跌幅等）。若某代码无法解析为 investing_id，则不会出现在结果中。
+
+2. **拉取资产列表（搜索）**  
+   不传 `investing_id`、`from_date`、`to_date` 时，按类型返回资产列表（来自 Investing 搜索）。
+
+   **Query 参数**：
+
+   | 参数名   | 类型   | 必填 | 说明                       |
+   | -------- | ------ | ---- | -------------------------- |
+   | query    | string | 否   | 搜索关键词，空则用类型默认 |
+   | limit    | number | 否   | 条数，默认 50，最大 200    |
+   | exchange | string | 否   | 交易所，如 NASDAQ          |
+
+   **请求示例**：
+
+   ```http
+   GET {BASE_URL}/api/public/investing_index?limit=10
+   GET {BASE_URL}/api/public/investing_stock_global?query=AAPL&limit=5
+   GET {BASE_URL}/api/public/investing_crypto?limit=20
+
+   http://127.0.0.1:8080/api/public/investing_index?symbols=SSEC
+   http://127.0.0.1:8080/api/public/investing_stock_global?symbols=AAPL
+   http://127.0.0.1:8080/api/public/investing_crypto?symbols=ETH
+   ```
+
+   **返回**：JSON 数组，每项为一条资产信息（含 `ticker` 等，可用于历史接口的 `investing_id`）。
+
+3. **拉取历史数据**  
+   同时传入 `investing_id`、`from_date`、`to_date` 时，返回该资产在指定日期范围内的历史数据。
+
+   **Query 参数**：
+
+   | 参数名       | 类型          | 必填 | 说明                                              |
+   | ------------ | ------------- | ---- | ------------------------------------------------- |
+   | investing_id | string        | 是   | Investing 资产 ID（可从列表接口的 `ticker` 取得） |
+   | from_date    | string        | 是   | 开始日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`         |
+   | to_date      | string        | 是   | 结束日期，格式同上                                |
+   | interval     | string/number | 否   | 周期：`D`/`W`/`M` 或 `1/5/15/30/60/300`（分钟）   |
+
+   **请求示例**：
+
+   ```http
+   GET {BASE_URL}/api/public/investing_stock_global?investing_id=6408&from_date=2024-01-01&to_date=2024-01-10
+   GET {BASE_URL}/api/public/investing_stock_global?investing_id=6408&from_date=2024-01-01&to_date=2024-01-10&interval=D
+   ```
+
+   **返回**：JSON 数组，每项为一条 K 线/行情记录（字段以 Investing 返回为准，如开高低收等）。
+
+### 错误返回
+
+- **502**：Investing 数据拉取失败（如依赖未安装、网络或上游不可用）。若存在历史缓存，会改为返回 200 与缓存内容。
+- **404**：仅当 item_id 既不是 AKShare 接口名也不是上表所列 Investing 接口名时返回。
+
+### Investing 示例
+
+```bash
+# 实时行情（单标的 / 多标的）
+curl "{BASE_URL}/api/public/investing_stock_global?symbols=AAPL"
+curl "{BASE_URL}/api/public/investing_stock_global?symbols=AAPL,MSFT"
+
+# 指数列表（前 10 条）
+curl "{BASE_URL}/api/public/investing_index?limit=10"
+
+# 全球股票搜索 AAPL
+curl "{BASE_URL}/api/public/investing_stock_global?query=AAPL&limit=5"
+
+# 某资产历史（investing_id 6408 示例）
+curl "{BASE_URL}/api/public/investing_stock_global?investing_id=6408&from_date=2024-01-01&to_date=2024-01-10"
+
+# 虚拟货币列表
+curl "{BASE_URL}/api/public/investing_crypto?limit=20"
+```
+
+---
+
 ## 四、页面与展示接口
 
 ### 7. PyScript 展示页（默认）
@@ -277,16 +402,16 @@ curl "http://127.0.0.1:8080/api/public/stock_comment_em"
 
 ## 六、汇总表
 
-| 序号 | 方法 | URL                        | 认证   | 说明              |
-| ---- | ---- | -------------------------- | ------ | ----------------- |
-| 1    | GET  | /                          | 否     | 网站首页          |
-| 2    | GET  | /version                   | 否     | 版本信息          |
-| 3    | GET  | /favicon.ico               | 否     | Favicon           |
-| 4    | POST | /auth/token                | 否     | 获取 Token        |
-| 5    | GET  | /api/public/{item_id}      | 否     | 公开 AKShare 数据 |
-| 6    | GET  | /api/private/{item_id}     | Bearer | 私人 AKShare 数据 |
-| 7    | GET  | /api/show                  | 否     | PyScript 展示页   |
-| 8    | GET  | /api/show-temp/{interface} | 否     | PyScript 模板页   |
+| 序号 | 方法 | URL                        | 认证   | 说明                          |
+| ---- | ---- | -------------------------- | ------ | ----------------------------- |
+| 1    | GET  | /                          | 否     | 网站首页                      |
+| 2    | GET  | /version                   | 否     | 版本信息                      |
+| 3    | GET  | /favicon.ico               | 否     | Favicon                       |
+| 4    | POST | /auth/token                | 否     | 获取 Token                    |
+| 5    | GET  | /api/public/{item_id}      | 否     | 公开 AKShare / Investing 数据 |
+| 6    | GET  | /api/private/{item_id}     | Bearer | 私人 AKShare / Investing 数据 |
+| 7    | GET  | /api/show                  | 否     | PyScript 展示页               |
+| 8    | GET  | /api/show-temp/{interface} | 否     | PyScript 模板页               |
 
 ---
 
@@ -294,3 +419,4 @@ curl "http://127.0.0.1:8080/api/public/stock_comment_em"
 
 - [AKShare 官方文档](https://akshare.akfamily.xyz/)：查询所有可用接口名及参数、返回值含义。
 - [AKTools 中文文档](https://aktools.readthedocs.io/)：安装、启动及使用说明。
+- [Investing.com](https://cn.investing.com/) / [investiny](https://pypi.org/project/investiny/)：Investing 数据接口依赖与数据来源说明。
