@@ -293,6 +293,11 @@ Authorization: Bearer akshare
 
    http://127.0.0.1:8080/api/public/investing_index?symbols=SSEC
    http://127.0.0.1:8080/api/public/investing_stock_global?symbols=AAPL
+   http://127.0.0.1:8080/api/public/investing_futures?symbols=CL
+   http://127.0.0.1:8080/api/public/investing_fx?symbols=EURUSD
+   http://127.0.0.1:8080/api/public/investing_etf?symbols=SPY
+   http://127.0.0.1:8080/api/public/investing_bond?symbols=US10Y
+   http://127.0.0.1:8080/api/public/investing_fund?symbols=SPY
    http://127.0.0.1:8080/api/public/investing_crypto?symbols=ETH
    ```
 
