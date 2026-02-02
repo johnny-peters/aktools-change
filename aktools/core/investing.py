@@ -209,7 +209,16 @@ def fetch_investing_list(
                 out.append({k: v for k, v in r.items()})
             else:
                 out.append(dict(r))
-        return out, None
+        # 仅保留自身类型 + Forex + Index
+        allowed_types = {t, "Forex", "Index"}
+        if t == "FX":
+            allowed_types.add("FX")
+        filtered = []
+        for row in out:
+            r_type = row.get("type")
+            if r_type in allowed_types:
+                filtered.append(row)
+        return filtered, None
     except Exception as e:
         logger.exception("investing list %s failed: %s", item_id, e)
         return None, e

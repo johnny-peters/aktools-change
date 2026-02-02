@@ -48,12 +48,14 @@ _cache: Dict[Tuple[str, str], Dict[str, Any]] = {}
 
 
 def _make_cache_key(item_id: str, request: Request) -> Tuple[str, str]:
+    if is_investing_item(item_id):
+        query_items = list(request.query_params.items())
+        if query_items:
+            query_key = urllib.parse.urlencode(sorted(query_items))
+        else:
+            query_key = ""
+        return item_id, query_key
     symbol = (request.query_params.get("symbol") or "").strip()
-    if not symbol and is_investing_item(item_id):
-        symbol = (
-            (request.query_params.get("symbols") or request.query_params.get("Symbols") or "").strip()
-            or (request.query_params.get("investing_id") or "").strip()
-        )
     return item_id, symbol
 
 
