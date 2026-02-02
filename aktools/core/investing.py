@@ -96,6 +96,12 @@ def _date_to_investiny(s: str) -> str:
     return s
 
 
+def _date_to_investiny_time(s: str, hm: str = "00:00") -> str:
+    """将 YYYY-MM-DD 转为 MM/DD/YYYY HH:MM，供分钟级 interval 使用。"""
+    date_part = _date_to_investiny(s)
+    return f"{date_part} {hm}".strip()
+
+
 def _build_headers() -> Dict[str, str]:
     return {
         "User-Agent": (
@@ -253,9 +259,10 @@ def _quote_from_history(
     investing_id: int,
     from_date: str,
     to_date: str,
+    interval: Union[str, int] = "D",
 ) -> Optional[Dict[str, Any]]:
     """用最近一根 K 线拼成一条「近似实时」行情（lp=close, ch/chp 等）。"""
-    rows, err = fetch_investing_historical(investing_id, from_date, to_date, interval="D")
+    rows, err = fetch_investing_historical(investing_id, from_date, to_date, interval=interval)
     if err or not isinstance(rows, list) or len(rows) < 1:
         return None
     last = rows[-1]
@@ -296,7 +303,7 @@ def fetch_investing_quotes(
 ) -> Tuple[Optional[List[Dict[str, Any]]], Optional[Exception]]:
     """
     拉取 Investing 近似实时行情。tvc6 quotes 用名称请求常返回 lp/ch 为 null，
-    故统一用「search 解析 symbol -> investing_id + 最近日 K 线」拼 lp/ch/chp。
+    故统一用「search 解析 symbol -> investing_id + 最近一分钟 K 线」拼 lp/ch/chp。
     """
     ok, err = _ensure_investiny()
     if not ok:
@@ -307,14 +314,14 @@ def fetch_investing_quotes(
     try:
         today = datetime.now(timezone.utc)
         to_date = today.strftime("%Y-%m-%d")
-        from_date = (today - timedelta(days=14)).strftime("%Y-%m-%d")
+        from_date = (today - timedelta(days=2)).strftime("%Y-%m-%d")
         out: List[Dict[str, Any]] = []
         for sym in symbols:
             tid = _resolve_symbol_to_investing_id(item_id, sym, exchange=exchange)
             if tid is None:
                 logger.warning("investing quotes: no id for symbol=%s", sym)
                 continue
-            row = _quote_from_history(sym, tid, from_date, to_date)
+            row = _quote_from_history(sym, tid, from_date, to_date, interval=1)
             if row is not None:
                 out.append(row)
         return out, None
@@ -333,8 +340,12 @@ def fetch_investing_historical(
     ok, err = _ensure_investiny()
     if not ok:
         return None, Exception(err)
-    from_fmt = _date_to_investiny(from_date)
-    to_fmt = _date_to_investiny(to_date)
+    if interval in ["D", "W", "M"]:
+        from_fmt = _date_to_investiny(from_date)
+        to_fmt = _date_to_investiny(to_date)
+    else:
+        from_fmt = _date_to_investiny_time(from_date, "00:00")
+        to_fmt = _date_to_investiny_time(to_date, "23:59")
     try:
         info = _investing_info(investing_id)
         has_volume = not info.get("has_no_volume", False)

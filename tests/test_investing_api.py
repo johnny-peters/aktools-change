@@ -144,6 +144,10 @@ def test_investing_public_quotes_symbols() -> None:
         assert isinstance(row, dict)
         assert row.get("symbol") == "AAPL"
         assert row.get("lp") is not None, "行情应含 lp（最近价）"
+        date_str = row.get("date")
+        assert isinstance(date_str, str) and " " in date_str and ":" in date_str, (
+            "实时行情应包含分钟级时间（如 MM/DD/YYYY HH:MM）"
+        )
 
 
 def test_investing_public_quotes_multiple_symbols() -> None:

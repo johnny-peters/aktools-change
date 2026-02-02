@@ -254,7 +254,7 @@ Authorization: Bearer akshare
 ### 三种用法
 
 1. **拉取实时行情（quotes）**  
-   传入 `symbols` 时，先按类型将资产名称/代码解析为 Investing 的 investing_id，再调用 tvc6 quotes 接口获取含最新价、涨跌等字段的实时行情。
+   传入 `symbols` 时，先按类型将资产名称/代码解析为 Investing 的 investing_id，再取**最近一分钟 K 线**拼出含最新价、涨跌等字段的实时行情。
 
    **Query 参数**：
 
@@ -271,7 +271,7 @@ Authorization: Bearer akshare
    GET {BASE_URL}/api/public/investing_crypto?symbols=BTC,ETH
    ```
 
-   **返回**：JSON 数组，每项为一条实时行情（含 `symbol` 及 Investing 返回的行情字段，如 `lp` 最新价、`ch` 涨跌、`pcp` 涨跌幅等）。若某代码无法解析为 investing_id，则不会出现在结果中。
+   **返回**：JSON 数组，每项为一条实时行情（含 `symbol` 及行情字段，如 `lp` 最新价、`ch` 涨跌、`chp` 涨跌幅等）。若某代码无法解析为 investing_id，则不会出现在结果中。
 
 2. **拉取资产列表（搜索）**  
    不传 `investing_id`、`from_date`、`to_date` 时，按类型返回资产列表（来自 Investing 搜索）。
@@ -328,6 +328,11 @@ Authorization: Bearer akshare
 
 - **502**：Investing 数据拉取失败（如依赖未安装、网络或上游不可用）。若存在历史缓存，会改为返回 200 与缓存内容。
 - **404**：仅当 item_id 既不是 AKShare 接口名也不是上表所列 Investing 接口名时返回。
+
+### Investing 数据日期说明
+
+- 实时行情使用**一分钟 K 线**，`date` 字段格式为 `MM/DD/YYYY HH:MM`（含时分，不含秒）。
+- 历史数据当 `interval=D/W/M` 时仅含日期；当 `interval` 为分钟级时含 `HH:MM`。
 
 ### Investing 示例
 

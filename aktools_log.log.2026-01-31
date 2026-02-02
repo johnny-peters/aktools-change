@@ -1,0 +1,2555 @@
+2026-01-31 16:55:47,859 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 16:56:02,961 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 83, in fetch_investing_list
+    res = search_assets(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\search.py", line 42, in search_assets
+    return request_to_investing(endpoint="search", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 36, in request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 16:56:02,971 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 16:56:12,171 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 83, in fetch_investing_list
+    res = search_assets(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\search.py", line 42, in search_assets
+    return request_to_investing(endpoint="search", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 36, in request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 16:56:12,171 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 16:56:12,355 - AKToolsLog - INFO - 获取到 stock_zh_a_hist 的数据
+2026-01-31 17:04:15,732 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 17:04:23,668 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 154, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 96, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 17:04:23,669 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 17:04:32,181 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 154, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 96, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 17:04:32,181 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 17:04:39,822 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 154, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 96, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 17:04:39,822 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 17:07:30,990 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 154, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 96, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 17:07:30,991 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 17:07:48,970 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 154, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 96, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 17:07:48,971 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 17:08:02,700 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 154, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 96, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 17:08:02,701 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 17:09:25,464 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 17:09:43,627 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 154, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 96, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 17:09:43,628 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 17:09:45,480 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 154, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 96, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 17:09:45,480 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 17:10:17,560 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 17:10:27,216 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 154, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 96, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-01-31 17:10:27,217 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-01-31 17:14:53,539 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 17:15:06,008 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-01-31 17:16:45,120 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 17:17:06,036 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-01-31 17:24:08,219 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 17:29:25,468 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-01-31 17:29:45,394 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-01-31 17:31:03,941 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-01-31 17:31:49,756 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 17:48:36,903 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 17:48:37,745 - AKToolsLog - INFO - 获取到 Investing investing_bond 的数据
+2026-01-31 17:48:39,585 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-01-31 17:48:40,567 - AKToolsLog - INFO - 获取到 Investing investing_etf 的数据
+2026-01-31 17:48:41,214 - AKToolsLog - INFO - 获取到 Investing investing_fund 的数据
+2026-01-31 17:48:42,384 - AKToolsLog - INFO - 获取到 Investing investing_futures 的数据
+2026-01-31 17:48:42,909 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-01-31 17:48:43,864 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-01-31 17:48:44,498 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 17:48:44,502 - AKToolsLog - INFO - 命中缓存: investing_index
+2026-01-31 17:48:44,505 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-01-31 17:48:44,508 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-01-31 17:48:45,964 - AKToolsLog - INFO - 获取到 Investing investing_bond 的数据
+2026-01-31 17:48:48,068 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-01-31 17:48:49,193 - AKToolsLog - INFO - 获取到 Investing investing_etf 的数据
+2026-01-31 17:48:51,340 - AKToolsLog - INFO - 获取到 Investing investing_fund 的数据
+2026-01-31 17:48:54,055 - AKToolsLog - INFO - 获取到 Investing investing_futures 的数据
+2026-01-31 17:48:55,737 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-01-31 17:48:57,307 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-01-31 17:48:58,524 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 17:48:58,528 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-01-31 17:48:58,528 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-01-31 17:48:58,568 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-01-31 18:13:08,306 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 18:15:56,513 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-01-31 18:15:58,371 - AKToolsLog - ERROR - investing historical id=176 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:15:58,392 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:01,669 - AKToolsLog - ERROR - investing historical id=44336 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:01,671 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:02,312 - AKToolsLog - ERROR - investing historical id=1061443 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:02,312 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:03,068 - AKToolsLog - ERROR - investing historical id=956731 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:03,068 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:03,664 - AKToolsLog - ERROR - investing historical id=1061477 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:03,665 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:04,658 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 18:16:05,087 - AKToolsLog - ERROR - investing historical id=17296 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:05,087 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:05,974 - AKToolsLog - ERROR - investing historical id=1163673 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:05,974 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:06,242 - AKToolsLog - ERROR - investing historical id=960323 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:06,242 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:07,131 - AKToolsLog - INFO - 获取到 Investing investing_futures 的数据
+2026-01-31 18:16:07,719 - AKToolsLog - ERROR - investing historical id=8827 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:07,721 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:08,629 - AKToolsLog - ERROR - investing historical id=8837 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:08,629 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:08,880 - AKToolsLog - ERROR - investing historical id=8853 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:08,880 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:09,872 - AKToolsLog - ERROR - investing historical id=8884 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:09,872 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:10,430 - AKToolsLog - ERROR - investing historical id=8873 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:10,430 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:11,647 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-01-31 18:16:11,952 - AKToolsLog - ERROR - investing historical id=1156567 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:11,952 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:13,447 - AKToolsLog - ERROR - investing historical id=1070750 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:13,459 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:14,032 - AKToolsLog - ERROR - investing historical id=1135966 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:14,032 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:15,064 - AKToolsLog - ERROR - investing historical id=1184978 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:15,064 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:15,301 - AKToolsLog - ERROR - investing historical id=1224711 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:15,301 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:16,387 - AKToolsLog - INFO - 获取到 Investing investing_etf 的数据
+2026-01-31 18:16:17,000 - AKToolsLog - ERROR - investing historical id=505 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:17,007 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:18,052 - AKToolsLog - ERROR - investing historical id=504 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:18,052 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:18,374 - AKToolsLog - ERROR - investing historical id=525 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:18,374 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:19,879 - AKToolsLog - ERROR - investing historical id=37595 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:19,879 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:20,468 - AKToolsLog - ERROR - investing historical id=38414 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:20,474 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:21,542 - AKToolsLog - INFO - 获取到 Investing investing_bond 的数据
+2026-01-31 18:16:22,140 - AKToolsLog - ERROR - investing historical id=23706 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:22,149 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:23,228 - AKToolsLog - ERROR - investing historical id=23705 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:23,230 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:23,815 - AKToolsLog - ERROR - investing historical id=23702 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:23,815 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:25,321 - AKToolsLog - ERROR - investing historical id=1161827 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:25,321 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:25,576 - AKToolsLog - ERROR - investing historical id=23704 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 213, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 149, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:25,576 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:16:26,705 - AKToolsLog - INFO - 获取到 Investing investing_fund 的数据
+2026-01-31 18:16:27,100 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-01-31 18:20:44,962 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 18:20:54,522 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-01-31 18:20:55,072 - AKToolsLog - ERROR - investing historical id=176 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:55,073 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:56,954 - AKToolsLog - ERROR - investing historical id=44336 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:56,954 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:57,213 - AKToolsLog - ERROR - investing historical id=1061443 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:57,213 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:57,441 - AKToolsLog - ERROR - investing historical id=956731 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:57,443 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:58,390 - AKToolsLog - ERROR - investing historical id=1061477 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:58,397 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:59,318 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 18:20:59,588 - AKToolsLog - ERROR - investing historical id=17296 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:20:59,588 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:00,431 - AKToolsLog - ERROR - investing historical id=1163673 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:00,431 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:00,925 - AKToolsLog - ERROR - investing historical id=960323 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:00,925 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:03,638 - AKToolsLog - INFO - 获取到 Investing investing_futures 的数据
+2026-01-31 18:21:03,973 - AKToolsLog - ERROR - investing historical id=8827 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:03,973 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:05,116 - AKToolsLog - ERROR - investing historical id=8837 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:05,116 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:05,431 - AKToolsLog - ERROR - investing historical id=8853 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:05,432 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:06,558 - AKToolsLog - ERROR - investing historical id=8884 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:06,564 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:07,148 - AKToolsLog - ERROR - investing historical id=8873 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:07,149 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:08,932 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-01-31 18:21:09,180 - AKToolsLog - ERROR - investing historical id=1156567 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:09,187 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:10,191 - AKToolsLog - ERROR - investing historical id=1070750 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:10,198 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:10,475 - AKToolsLog - ERROR - investing historical id=1135966 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:10,480 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:12,342 - AKToolsLog - ERROR - investing historical id=1184978 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:12,342 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:12,808 - AKToolsLog - ERROR - investing historical id=1224711 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:12,808 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:13,672 - AKToolsLog - INFO - 获取到 Investing investing_etf 的数据
+2026-01-31 18:21:13,981 - AKToolsLog - ERROR - investing historical id=505 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:13,981 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:15,786 - AKToolsLog - ERROR - investing historical id=504 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:15,789 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:16,042 - AKToolsLog - ERROR - investing historical id=525 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:16,042 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:16,950 - AKToolsLog - ERROR - investing historical id=37595 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:16,958 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:17,273 - AKToolsLog - ERROR - investing historical id=38414 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:17,274 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:19,067 - AKToolsLog - INFO - 获取到 Investing investing_bond 的数据
+2026-01-31 18:21:19,591 - AKToolsLog - ERROR - investing historical id=23706 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:19,591 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:21,782 - AKToolsLog - ERROR - investing historical id=23705 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:21,783 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:22,117 - AKToolsLog - ERROR - investing historical id=23702 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:22,117 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:22,850 - AKToolsLog - ERROR - investing historical id=1161827 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:22,850 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:23,464 - AKToolsLog - ERROR - investing historical id=23704 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:23,465 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:24,509 - AKToolsLog - INFO - 获取到 Investing investing_fund 的数据
+2026-01-31 18:21:24,975 - AKToolsLog - ERROR - investing historical id=960597 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:24,976 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:26,034 - AKToolsLog - ERROR - investing historical id=987341 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:26,040 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:26,434 - AKToolsLog - ERROR - investing historical id=962400 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:26,441 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:28,293 - AKToolsLog - ERROR - investing historical id=961755 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:28,293 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:28,532 - AKToolsLog - ERROR - investing historical id=941537 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:28,532 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:30,359 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-01-31 18:21:30,942 - AKToolsLog - ERROR - investing historical id=945629 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:30,942 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:32,601 - AKToolsLog - ERROR - investing historical id=1057391 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:32,601 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:33,018 - AKToolsLog - ERROR - investing historical id=1057388 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:33,018 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:33,974 - AKToolsLog - ERROR - investing historical id=1218849 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:33,975 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:34,242 - AKToolsLog - ERROR - investing historical id=52673 failed: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 221, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:21:34,247 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - time data '21/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 18:28:08,052 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 18:28:08,738 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 18:28:09,233 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 18:28:45,297 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 18:29:07,187 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-01-31 18:30:56,722 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 18:31:10,909 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-01-31 18:33:00,480 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 18:33:01,711 - AKToolsLog - ERROR - investing quotes symbols=['AAPL'] failed: Request to Investing.com API failed with error message: error.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 261, in fetch_investing_quotes
+    data = _request_to_investing(endpoint="quotes", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 140, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: error.
+2026-01-31 18:33:01,712 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error message: error.
+2026-01-31 18:33:05,520 - AKToolsLog - ERROR - investing quotes symbols=['AAPL', 'MSFT'] failed: Request to Investing.com API failed with error message: error.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 261, in fetch_investing_quotes
+    data = _request_to_investing(endpoint="quotes", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 140, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: error.
+2026-01-31 18:33:05,521 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error message: error.
+2026-01-31 18:34:01,119 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 18:34:05,363 - AKToolsLog - ERROR - investing quotes symbols=['BTC'] failed: Request to Investing.com API failed with error message: error.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 261, in fetch_investing_quotes
+    data = _request_to_investing(endpoint="quotes", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 140, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: error.
+2026-01-31 18:34:05,382 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error message: error.
+2026-01-31 18:34:18,519 - AKToolsLog - ERROR - investing quotes symbols=['AAPL'] failed: Request to Investing.com API failed with error message: error.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 261, in fetch_investing_quotes
+    data = _request_to_investing(endpoint="quotes", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 140, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: error.
+2026-01-31 18:34:18,521 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error message: error.
+2026-01-31 18:40:09,408 - AKToolsLog - ERROR - investing quotes symbols=['AAPL'] failed: Request to Investing.com API failed with error message: error.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 261, in fetch_investing_quotes
+    data = _request_to_investing(endpoint="quotes", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 140, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: error.
+2026-01-31 18:40:09,410 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error message: error.
+2026-01-31 20:13:21,422 - AKToolsLog - ERROR - investing quotes symbols=['AAPL'] failed: Request to Investing.com API failed with error message: error.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 261, in fetch_investing_quotes
+    data = _request_to_investing(endpoint="quotes", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 140, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: error.
+2026-01-31 20:13:21,440 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error message: error.
+2026-01-31 20:13:35,532 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:13:40,174 - AKToolsLog - ERROR - investing quotes symbols=['AAPL'] failed: Request to Investing.com API failed with error message: error.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 261, in fetch_investing_quotes
+    data = _request_to_investing(endpoint="quotes", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 140, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: error.
+2026-01-31 20:13:40,174 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error message: error.
+2026-01-31 20:16:11,935 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:16:22,270 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:20:07,189 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:21:32,004 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:21:35,576 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:23:09,868 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:23:11,729 - AKToolsLog - ERROR - investing historical id=6408 failed: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 355, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 20:23:11,729 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:23:14,077 - AKToolsLog - ERROR - investing historical id=6408 failed: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 355, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 20:23:15,694 - AKToolsLog - ERROR - investing historical id=252 failed: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 355, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 20:23:15,695 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:23:45,447 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:23:51,114 - AKToolsLog - ERROR - investing historical id=6408 failed: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 355, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 20:23:51,116 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:23:54,249 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-01-31 20:25:00,525 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:25:01,902 - AKToolsLog - ERROR - investing historical id=6408 failed: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 335, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 20:25:01,902 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:25:03,418 - AKToolsLog - ERROR - investing historical id=6408 failed: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 335, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 20:25:04,903 - AKToolsLog - ERROR - investing historical id=252 failed: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 335, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 20:25:04,903 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:25:26,353 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:25:40,604 - AKToolsLog - ERROR - investing historical id=6408 failed: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 87, in calculate_date_intervals
+    from_datetimes = [datetime.strptime(from_date, Config.date_format)]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 335, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 156, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 96, in calculate_date_intervals
+    datetime.strptime(from_date, Config.time_format).astimezone(tz=timezone.utc)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '17/01/2026' does not match format '%m/%d/%Y %H:%M'
+2026-01-31 20:25:40,604 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:25:44,558 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-01-31 20:27:09,411 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:27:12,488 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:27:18,493 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:27:19,580 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:27:23,525 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:27:36,530 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 20:27:39,572 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:28:36,701 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-01-31 20:31:22,831 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-01-31 20:31:45,221 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 20:32:35,011 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-01-31 21:01:37,248 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-01-31 21:01:46,128 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-01-31 21:01:57,328 - AKToolsLog - INFO - 获取到 Investing investing_fund 的数据
+2026-01-31 21:02:05,476 - AKToolsLog - INFO - 获取到 Investing investing_bond 的数据
+2026-01-31 21:02:14,458 - AKToolsLog - INFO - 获取到 Investing investing_etf 的数据
+2026-01-31 21:02:20,239 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-01-31 21:02:36,997 - AKToolsLog - WARNING - investing quotes: no id for symbol=CL
+2026-01-31 21:02:36,997 - AKToolsLog - INFO - 获取到 Investing investing_futures 的数据
