@@ -89,8 +89,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# 让应用信任反向代理的真实客户端 IP
+
 app.include_router(app_core, prefix="/api", tags=["数据接口"])
 app.include_router(app_user_login, prefix="/auth", tags=["登录接口"])
 
 if __name__ == "__main__":
-    uvicorn.run(app="main:app", host="0.0.0.0", port=20808)
+    uvicorn.run(
+        app="main:app",
+        host="0.0.0.0",
+        port=20808,
+        proxy_headers=True,
+        forwarded_allow_ips="*",
+    )

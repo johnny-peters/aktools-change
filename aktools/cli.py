@@ -41,7 +41,8 @@ def main(
 ) -> None:
     app_dir = Path(__file__).parent
     order_str = (
-        f"{sys.executable} -m uvicorn main:app --host {host} --port {port} --app-dir {app_dir}"
+        f"{sys.executable} -m uvicorn main:app --host {host} --port {port} "
+        f"--app-dir {app_dir} --proxy-headers --forwarded-allow-ips=*"
     )
     typer.echo(
         f"请访问：http://{host}:{port}/version 来获取最新的库版本信息，确保使用最新版本的 AKShare 和 AKTools"
