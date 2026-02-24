@@ -1,0 +1,39 @@
+2026-02-02 12:11:26,188 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-02 12:11:27,100 - AKToolsLog - ERROR - investing historical id=6408 failed: can't subtract offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 344, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 164, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 165, in calculate_date_intervals
+    datetime.now(tz=timezone.utc)
+TypeError: can't subtract offset-naive and offset-aware datetimes
+2026-02-02 12:11:27,117 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-02 12:11:28,155 - AKToolsLog - ERROR - investing historical id=6408 failed: can't subtract offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 344, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 164, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 165, in calculate_date_intervals
+    datetime.now(tz=timezone.utc)
+TypeError: can't subtract offset-naive and offset-aware datetimes
+2026-02-02 12:11:29,110 - AKToolsLog - ERROR - investing historical id=252 failed: can't subtract offset-naive and offset-aware datetimes
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 344, in fetch_investing_historical
+    from_datetimes, to_datetimes = _calculate_date_intervals(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 164, in _calculate_date_intervals
+    return calculate_date_intervals(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python311\site-packages\investiny\utils.py", line 165, in calculate_date_intervals
+    datetime.now(tz=timezone.utc)
+TypeError: can't subtract offset-naive and offset-aware datetimes
+2026-02-02 12:11:29,111 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-02 12:11:59,440 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-02 12:12:00,570 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-02 12:12:04,483 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据

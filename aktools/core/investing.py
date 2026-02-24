@@ -13,19 +13,24 @@ logger = logging.getLogger(name="AKToolsLog")
 
 # 优先使用 curl_cffi 模拟浏览器 TLS/指纹，以绕过 Investing.com 的 Cloudflare 403
 _USE_CURL_CFFI: Optional[bool] = None
+_CURL_SESSION: Optional[Any] = None
 
 
 def _get_http_client():
-    global _USE_CURL_CFFI
+    global _USE_CURL_CFFI, _CURL_SESSION
     if _USE_CURL_CFFI is None:
         try:
             from curl_cffi import requests as _curl_requests  # noqa: F401
             _USE_CURL_CFFI = True
+            logger.info("Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）")
         except ImportError:
             _USE_CURL_CFFI = False
+            logger.warning("Investing: curl_cffi 未安装，使用 httpx，tvc6 API 可能返回 403")
     if _USE_CURL_CFFI:
-        from curl_cffi import requests as curl_requests
-        return ("curl_cffi", curl_requests)
+        if _CURL_SESSION is None:
+            from curl_cffi import requests as curl_requests
+            _CURL_SESSION = curl_requests.Session(impersonate="chrome")
+        return ("curl_cffi", _CURL_SESSION)
     import httpx
     return ("httpx", httpx)
 
@@ -129,12 +134,11 @@ def _request_to_investing(
     url = f"https://tvc6.investing.com/{uuid4().hex}/0/0/0/0/{endpoint}"
     client_type, client = _get_http_client()
     if client_type == "curl_cffi":
-        # 模拟 Chrome 浏览器 TLS/指纹，提高通过 Cloudflare 的概率
+        # Session 已设置 impersonate="chrome"，复用连接与 cookie 提高成功率
         resp = client.get(
             url,
             params=params,
             timeout=timeout,
-            impersonate="chrome120",
             referer="https://cn.investing.com/",
         )
     else:
