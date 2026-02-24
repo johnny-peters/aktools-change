@@ -287,3 +287,52 @@ ConnectionError: Request to Investing.com API failed with error code: 403.
 2026-02-24 14:57:58,748 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
 2026-02-24 14:57:59,378 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
 2026-02-24 14:57:59,378 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-24 15:13:32,540 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-24 15:13:40,963 - AKToolsLog - INFO - 获取到 stock_hk_daily 的数据
+2026-02-24 15:14:28,467 - AKToolsLog - INFO - 命中缓存: stock_hk_daily
+2026-02-24 15:15:02,756 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-24 15:15:04,611 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-02-24 15:15:04,611 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-02-24 15:16:03,727 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-24 15:16:03,808 - AKToolsLog - WARNING - investing quotes: no id for symbol=BTC
+2026-02-24 15:16:03,809 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-24 15:16:03,814 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-24 15:16:03,905 - AKToolsLog - WARNING - investing quotes: no id for symbol=DOGE
+2026-02-24 15:16:03,905 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-24 15:16:17,773 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-24 15:16:28,076 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-24 15:16:29,793 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-02-24 15:16:29,801 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-02-24 15:20:04,321 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-24 15:20:05,731 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-24 15:20:05,825 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-24 15:20:05,825 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome124
+2026-02-24 15:20:09,587 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-24 15:20:09,606 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-24 15:20:13,184 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-24 15:20:15,712 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-24 15:21:10,101 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-24 15:21:11,146 - AKToolsLog - INFO - 获取到 stock_hk_spot_em 的数据
+2026-02-24 15:21:12,448 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-24 15:21:12,448 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-24 15:21:12,459 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-24 15:21:13,232 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-24 15:21:15,959 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-24 15:21:17,954 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-24 15:21:54,635 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-24 15:21:55,344 - AKToolsLog - INFO - Investing 爬取缺失区间: id=6497 [2025-10-22 ~ 2026-02-24]
+2026-02-24 15:21:55,351 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据

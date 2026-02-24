@@ -110,4 +110,4 @@ python -m aktools --auto
 | 使用 PowerShell 或 CMD | 上述命令在 PowerShell 和 CMD 中均可执行 |
 | 端口占用 | 若 8080 被占用，可通过 `--port 端口号` 修改 |
 | 防火墙 | 若需外网访问，将 `--host` 设为 `0.0.0.0`，并允许防火墙放行对应端口 |
-| Investing 数据 | 若使用 Investing 接口（如 `investing_stock_global`），需安装 `curl_cffi` 以绕过 Cloudflare，否则可能返回 403 |
+| Investing 数据 | 需安装 `curl_cffi` 以绕过 Cloudflare；若仍出现 403，可设置环境变量 `INVESTING_IMPERSONATE=safari184` 或 `chrome131` 尝试不同指纹 |

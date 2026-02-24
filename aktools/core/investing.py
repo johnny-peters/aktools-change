@@ -24,6 +24,8 @@ _CURL_SESSION: Optional[Any] = None
 
 
 def _get_http_client():
+    import os as _os
+
     global _USE_CURL_CFFI, _CURL_SESSION
     if _USE_CURL_CFFI is None:
         try:
@@ -36,7 +38,11 @@ def _get_http_client():
     if _USE_CURL_CFFI:
         if _CURL_SESSION is None:
             from curl_cffi import requests as curl_requests
-            _CURL_SESSION = curl_requests.Session(impersonate="chrome")
+
+            # 可通过环境变量 INVESTING_IMPERSONATE 覆盖（如 chrome124、safari184），以应对 403
+            impersonate = _os.getenv("INVESTING_IMPERSONATE", "chrome124")
+            _CURL_SESSION = curl_requests.Session(impersonate=impersonate)
+            logger.info("Investing: curl_cffi impersonate=%s", impersonate)
         return ("curl_cffi", _CURL_SESSION)
     import httpx
     return ("httpx", httpx)
@@ -162,12 +168,15 @@ def _request_to_investing(
     url = f"https://tvc6.investing.com/{uuid4().hex}/0/0/0/0/{endpoint}"
     client_type, client = _get_http_client()
     if client_type == "curl_cffi":
-        # Session 已设置 impersonate="chrome"，复用连接与 cookie 提高成功率
+        # impersonate 已设置 UA 等，仅补充 CORS 相关头以降低 403 概率
         resp = client.get(
             url,
             params=params,
             timeout=timeout,
-            referer="https://cn.investing.com/",
+            headers={
+                "Referer": "https://cn.investing.com/",
+                "Origin": "https://cn.investing.com",
+            },
         )
     else:
         headers = _build_headers()
