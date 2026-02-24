@@ -3,13 +3,20 @@
 Investing.com 数据抓取模块 (cn.investing.com)
 支持：指数、全球股票(非A股港股)、期货、货币、ETF、国债、基金、虚拟货币
 使用 investiny 访问公开数据，无需登录。
+历史数据支持智能缓存：按 investing_id+interval 存储日期区间，部分命中时仅爬取缺失区间并合并。
 """
 import logging
+import re
 from datetime import datetime, timezone, timedelta
+from threading import Lock
 from typing import Any, Dict, List, Optional, Tuple, Union
 from uuid import uuid4
 
 logger = logging.getLogger(name="AKToolsLog")
+
+# 历史数据缓存：按 (investing_id, interval) 存储 {from_date, to_date, rows}，支持部分命中合并
+_HISTORICAL_CACHE: Dict[Tuple[int, str], Dict[str, Any]] = {}
+_HISTORICAL_CACHE_LOCK = Lock()
 
 # 优先使用 curl_cffi 模拟浏览器 TLS/指纹，以绕过 Investing.com 的 Cloudflare 403
 _USE_CURL_CFFI: Optional[bool] = None
@@ -99,6 +106,27 @@ def _date_to_investiny(s: str) -> str:
     if len(s) == 8:
         return f"{s[4:6]}/{s[6:8]}/{s[0:4]}"
     return s
+
+
+def _normalize_yyyymmdd(s: str) -> str:
+    """将日期字符串规范为 YYYY-MM-DD，用于区间比较与排序。"""
+    s = (s or "").strip()
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", s)
+    if m:
+        return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", s)
+    if m:
+        mm, dd, yyyy = m.group(1).zfill(2), m.group(2).zfill(2), m.group(3)
+        return f"{yyyy}-{mm}-{dd}"
+    return s
+
+
+def _row_date_iso(row: Dict[str, Any]) -> str:
+    """从行情行提取可比较的日期字符串 YYYY-MM-DD。"""
+    d = row.get("date")
+    if not d or not isinstance(d, str):
+        return ""
+    return _normalize_yyyymmdd(d)
 
 
 def _date_to_investiny_time(s: str, hm: str = "00:00") -> str:
@@ -400,6 +428,147 @@ def fetch_investing_historical(
         return None, e
 
 
+def _date_add_days(s: str, days: int) -> str:
+    """YYYY-MM-DD 加减天数。"""
+    s = _normalize_yyyymmdd(s)
+    if not s or len(s) != 10:
+        return s
+    try:
+        dt = datetime(int(s[:4]), int(s[5:7]), int(s[8:10]))
+        return (dt + timedelta(days=days)).strftime("%Y-%m-%d")
+    except (ValueError, TypeError):
+        return s
+
+
+def _find_missing_ranges(
+    req_from: str, req_to: str, cache_from: str, cache_to: str
+) -> List[Tuple[str, str]]:
+    """
+    计算用户请求 [req_from, req_to] 中未被缓存 [cache_from, cache_to] 覆盖的区间。
+    返回 [(from1, to1), (from2, to2), ...]，按时间顺序。缺失区间与缓存不重叠。
+    """
+    req_from = _normalize_yyyymmdd(req_from)
+    req_to = _normalize_yyyymmdd(req_to)
+    cache_from = _normalize_yyyymmdd(cache_from)
+    cache_to = _normalize_yyyymmdd(cache_to)
+    if not req_from or not req_to:
+        return []
+    if not cache_from or not cache_to:
+        return [(req_from, req_to)]
+    missing: List[Tuple[str, str]] = []
+    if req_from < cache_from:
+        end = _date_add_days(cache_from, -1)
+        if end >= req_from:
+            missing.append((req_from, end))
+    if req_to > cache_to:
+        start = _date_add_days(cache_to, 1)
+        if start <= req_to:
+            missing.append((start, req_to))
+    return missing
+
+
+def _filter_rows_by_range(
+    rows: List[Dict[str, Any]], from_date: str, to_date: str
+) -> List[Dict[str, Any]]:
+    """按日期区间过滤并排序 rows。"""
+    from_iso = _normalize_yyyymmdd(from_date)
+    to_iso = _normalize_yyyymmdd(to_date)
+    out = []
+    for row in rows:
+        d = _row_date_iso(row)
+        if d and from_iso <= d <= to_iso:
+            out.append(row)
+    out.sort(key=lambda r: (_row_date_iso(r), r.get("date", "")))
+    return out
+
+
+def _merge_and_dedupe_rows(
+    existing: List[Dict[str, Any]], new_rows: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    """合并两组行情，按日期去重（新数据优先）。"""
+    seen: Dict[str, Dict[str, Any]] = {}
+    for row in existing + new_rows:
+        d = _row_date_iso(row)
+        if d:
+            seen[d] = row
+    merged = list(seen.values())
+    merged.sort(key=lambda r: (_row_date_iso(r), r.get("date", "")))
+    return merged
+
+
+def fetch_investing_historical_cached(
+    investing_id: int,
+    from_date: str,
+    to_date: str,
+    interval: Union[str, int] = "D",
+) -> Tuple[Optional[List[Dict[str, Any]]], Optional[Exception]]:
+    """
+    带智能缓存的历史数据拉取：
+    - 无缓存：爬取 [from_date, to_date]，写入缓存后返回
+    - 全量命中：直接返回缓存中的请求区间
+    - 部分命中：仅爬取缺失区间，与缓存合并后更新缓存，返回请求区间
+    """
+    interval_key = str(interval).upper() if isinstance(interval, str) else str(interval)
+    cache_key = (investing_id, interval_key)
+    req_from = _normalize_yyyymmdd(from_date)
+    req_to = _normalize_yyyymmdd(to_date)
+
+    with _HISTORICAL_CACHE_LOCK:
+        entry = _HISTORICAL_CACHE.get(cache_key)
+        if entry:
+            cache_from = entry.get("from_date", "")
+            cache_to = entry.get("to_date", "")
+            cached_rows = entry.get("rows") or []
+            if cache_from and cache_to and cached_rows and req_from >= cache_from and req_to <= cache_to:
+                out = _filter_rows_by_range(cached_rows, from_date, to_date)
+                logger.info("Investing 历史缓存全量命中: id=%s [%s ~ %s]", investing_id, req_from, req_to)
+                return out, None
+            missing = _find_missing_ranges(req_from, req_to, cache_from, cache_to)
+        else:
+            missing = [(req_from, req_to)] if req_from and req_to else []
+            cached_rows = []
+            cache_from = ""
+            cache_to = ""
+
+    if not missing:
+        out = _filter_rows_by_range(cached_rows, from_date, to_date)
+        return out, None
+
+    all_new_rows: List[Dict[str, Any]] = []
+    for m_from, m_to in missing:
+        rows, err = fetch_investing_historical(investing_id, m_from, m_to, interval=interval)
+        if err is not None:
+            with _HISTORICAL_CACHE_LOCK:
+                entry = _HISTORICAL_CACHE.get(cache_key)
+                if entry and entry.get("rows"):
+                    out = _filter_rows_by_range(entry["rows"], from_date, to_date)
+                    logger.info("Investing 爬取缺失区间失败，返回已有缓存: id=%s", investing_id)
+                    return out, None
+            return None, err
+        if rows:
+            all_new_rows.extend(rows)
+            logger.info("Investing 爬取缺失区间: id=%s [%s ~ %s]", investing_id, m_from, m_to)
+
+    merged = _merge_and_dedupe_rows(cached_rows, all_new_rows)
+    if not merged:
+        return [], None
+    new_from = _row_date_iso(merged[0])
+    new_to = _row_date_iso(merged[-1])
+    if cache_from and cache_to:
+        new_from = min(new_from, _normalize_yyyymmdd(cache_from)) if new_from else cache_from
+        new_to = max(new_to, _normalize_yyyymmdd(cache_to)) if new_to else cache_to
+
+    with _HISTORICAL_CACHE_LOCK:
+        _HISTORICAL_CACHE[cache_key] = {
+            "from_date": new_from,
+            "to_date": new_to,
+            "rows": merged,
+        }
+
+    out = _filter_rows_by_range(merged, from_date, to_date)
+    return out, None
+
+
 def fetch_investing_data(
     item_id: str,
     params: Dict[str, str],
@@ -438,7 +607,7 @@ def fetch_investing_data(
             interval = int(interval)
         except ValueError:
             interval = interval.upper()
-        content, err = fetch_investing_historical(id_int, from_date, to_date, interval=interval)
+        content, err = fetch_investing_historical_cached(id_int, from_date, to_date, interval=interval)
         if err is not None:
             return None, err
         return content or [], None
