@@ -313,9 +313,14 @@ def _resolve_symbol_to_investing_id(
         return None
     search_type = _SEARCH_TYPE_OVERRIDE.get(item_id, t)
     query_symbol = symbol.strip()
-    if item_id == "investing_stock_global" and _is_a_share_symbol(query_symbol):
+    is_a = item_id == "investing_stock_global" and _is_a_share_symbol(query_symbol)
+    is_hk = item_id == "investing_stock_global" and _is_hk_stock_symbol(query_symbol)
+    if is_a:
         # search 对 600519.SH / 002340.SZ 返回空，A 股用纯 6 位代码查询
         query_symbol = _normalize_a_share_code(query_symbol) or query_symbol
+    elif is_hk:
+        # search 对 0700.HK / 1810.HK 返回空，港股用纯数字代码查询
+        query_symbol = _normalize_hk_code(query_symbol) or query_symbol
     kwargs: Dict[str, Any] = {"query": query_symbol, "limit": 5, "type": search_type}
     if exchange:
         kwargs["exchange"] = exchange
@@ -325,9 +330,9 @@ def _resolve_symbol_to_investing_id(
         return None
     if not isinstance(res, list) or not res:
         return None
-    # A 股优先做精确匹配，避免 query=002340 命中到非 A 股 ticker。
-    if item_id == "investing_stock_global" and _is_a_share_symbol(symbol):
-        code = _normalize_a_share_code(symbol)
+    # 中国股票优先做精确匹配，避免同代码命中东京等其他市场。
+    if item_id == "investing_stock_global" and (is_a or is_hk):
+        code = _normalize_a_share_code(symbol) if is_a else _normalize_hk_code(symbol)
         m = re.match(r"^\d{6}(?:\.(SH|SZ))?$", symbol.strip().upper())
         suffix = m.group(1) if m else ""
         for r in res:
@@ -337,10 +342,18 @@ def _resolve_symbol_to_investing_id(
             exchange_text = str(r.get("exchange") or "").strip().upper()
             if code and not (symbol_text == code or symbol_text.endswith(code)):
                 continue
-            if suffix == "SH" and exchange_text and ("SHANGHAI" not in exchange_text and "SSE" not in exchange_text):
-                continue
-            if suffix == "SZ" and exchange_text and ("SHENZHEN" not in exchange_text and "SZSE" not in exchange_text):
-                continue
+            if is_hk:
+                if "HONG KONG" not in exchange_text and "HK" not in exchange_text:
+                    continue
+            else:
+                if suffix == "SH" and exchange_text and ("SHANGHAI" not in exchange_text and "SSE" not in exchange_text):
+                    continue
+                if suffix == "SZ" and exchange_text and ("SHENZHEN" not in exchange_text and "SZSE" not in exchange_text):
+                    continue
+                if suffix not in {"SH", "SZ"} and exchange_text and all(
+                    x not in exchange_text for x in ["SHANGHAI", "SHENZHEN", "SSE", "SZSE"]
+                ):
+                    continue
             ticker = r.get("ticker") or r.get("id")
             if ticker is None:
                 continue
@@ -377,6 +390,31 @@ def _normalize_a_share_code(symbol: str) -> str:
     s = symbol.strip().upper()
     m = re.match(r"^(\d{6})(\.(SH|SZ))?$", s)
     return m.group(1) if m else ""
+
+
+def _is_hk_stock_symbol(symbol: str) -> bool:
+    """判断是否为港股代码格式（4-5 位数字，可选 .HK 后缀）。"""
+    if not symbol or not isinstance(symbol, str):
+        return False
+    s = symbol.strip().upper()
+    return bool(re.match(r"^\d{4,5}(\.HK)?$", s))
+
+
+def _normalize_hk_code(symbol: str) -> str:
+    """从 0700.HK/1810.HK 提取纯代码，不足 4 位左补零。"""
+    if not symbol or not isinstance(symbol, str):
+        return ""
+    s = symbol.strip().upper()
+    m = re.match(r"^(\d{1,5})(?:\.HK)?$", s)
+    if not m:
+        return ""
+    code = m.group(1)
+    return code.zfill(4) if len(code) < 4 else code
+
+
+def _is_china_stock_symbol(symbol: str) -> bool:
+    """判断是否为中国股票代码（A 股或港股）。"""
+    return _is_a_share_symbol(symbol) or _is_hk_stock_symbol(symbol)
 
 
 def _fetch_a_share_quote_akshare(
@@ -533,19 +571,19 @@ def fetch_investing_quotes(
         out: List[Dict[str, Any]] = []
         for sym in symbols:
             is_a_share = item_id == "investing_stock_global" and _is_a_share_symbol(sym)
+            is_cn_stock = item_id == "investing_stock_global" and _is_china_stock_symbol(sym)
             tid = _resolve_symbol_to_investing_id(item_id, sym, exchange=exchange)
             if tid is not None:
-                is_a_share = item_id == "investing_stock_global" and _is_a_share_symbol(sym)
-                # A 股先尝试 1 分钟，若 no_data 再尝试 5 分钟和日线（仍走 Investing）
-                intervals: List[Union[str, int]] = [1, 5, "D"] if is_a_share else [1]
+                # 中国股票先尝试 1 分钟，若 no_data 再尝试 5 分钟和日线（仍走 Investing）
+                intervals: List[Union[str, int]] = [1, 5, "D"] if is_cn_stock else [1]
                 row = _quote_from_history_with_fallback(sym, tid, from_date, to_date, intervals)
                 if row is not None:
                     out.append(row)
-                    if is_a_share:
-                        logger.info("investing quotes: A股 %s 通过 Investing 获取", sym)
+                    if is_cn_stock:
+                        logger.info("investing quotes: 中国股票 %s 通过 Investing 获取", sym)
                     continue
-                if is_a_share:
-                    logger.warning("investing quotes: A股 %s Investing 无数据，回退 AKShare", sym)
+                if is_cn_stock:
+                    logger.warning("investing quotes: 中国股票 %s Investing 无数据，回退本地源", sym)
             elif not is_a_share:
                 logger.warning("investing quotes: no id for symbol=%s", sym)
 
@@ -815,7 +853,7 @@ def fetch_investing_data(
     统一入口：根据 params 决定拉取列表、历史或实时行情。
     - 若提供 symbols（如 symbols=AAPL 或 symbols=600519.SH）：拉取实时行情（quotes）。
     - 若提供 investing_id + from_date + to_date：拉取历史数据。
-    - 若提供 symbol + from_date + to_date 且为 A 股：先用 Investing，失败再回退 AKShare。
+    - 若提供 symbol + from_date + to_date 且为中国股票：先用 Investing，A 股失败再回退 AKShare。
     - 否则：拉取该类型资产列表（可带 query, limit, exchange）。
     返回 (list[dict], None) 或 (None, Exception)。
     """
@@ -836,29 +874,37 @@ def fetch_investing_data(
     from_date = (params.get("from_date") or "").strip()
     to_date = (params.get("to_date") or "").strip()
 
-    # A 股历史：symbol + from_date + to_date（无 investing_id 时）
+    # 中国股票历史：symbol + from_date + to_date（无 investing_id 时）
     symbol_param = (params.get("symbol") or "").strip()
     if not pid and symbol_param and from_date and to_date and item_id == "investing_stock_global":
-        if _is_a_share_symbol(symbol_param):
-            code = _normalize_a_share_code(symbol_param)
-            if code:
-                interval = (params.get("interval") or "D").strip()
-                try:
-                    interval = int(interval)
-                except ValueError:
-                    interval = interval.upper()
-                tid = _resolve_symbol_to_investing_id(item_id, symbol_param, exchange=(params.get("exchange") or "").strip())
-                if tid is not None:
-                    content, err = fetch_investing_historical_cached(tid, from_date, to_date, interval=interval)
-                    if err is None and content:
-                        logger.info("investing 历史: A股 %s 通过 Investing 获取", symbol_param)
-                        return content or [], None
-                    logger.warning("investing 历史: A股 %s Investing 无数据，回退 AKShare", symbol_param)
-                content, err = _fetch_a_share_historical_akshare(code, from_date, to_date, str(interval))
-                if err is not None:
-                    return None, err
-                logger.info("investing 历史: A股 %s 通过 AKShare 获取", symbol_param)
-                return content or [], None
+        if _is_china_stock_symbol(symbol_param):
+            is_a_share = _is_a_share_symbol(symbol_param)
+            interval = (params.get("interval") or "D").strip()
+            try:
+                interval = int(interval)
+            except ValueError:
+                interval = interval.upper()
+            tid = _resolve_symbol_to_investing_id(
+                item_id, symbol_param, exchange=(params.get("exchange") or "").strip()
+            )
+            if tid is not None:
+                content, err = fetch_investing_historical_cached(
+                    tid, from_date, to_date, interval=interval
+                )
+                if err is None and content:
+                    logger.info("investing 历史: 中国股票 %s 通过 Investing 获取", symbol_param)
+                    return content or [], None
+                logger.warning("investing 历史: 中国股票 %s Investing 无数据", symbol_param)
+            if is_a_share:
+                code = _normalize_a_share_code(symbol_param)
+                if code:
+                    content, err = _fetch_a_share_historical_akshare(
+                        code, from_date, to_date, str(interval)
+                    )
+                    if err is not None:
+                        return None, err
+                    logger.info("investing 历史: A股 %s 通过 AKShare 获取", symbol_param)
+                    return content or [], None
 
     if pid and from_date and to_date:
         try:
