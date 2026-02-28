@@ -233,7 +233,7 @@ Authorization: Bearer akshare
 | item_id                | 说明                       |
 | ---------------------- | -------------------------- |
 | investing_index        | 指数                       |
-| investing_stock_global | 全球股票（A 股、港股以外） |
+| investing_stock_global | 全球股票；A 股（如 600519.SH、002340.SZ）自动从 AKShare 获取 |
 | investing_futures      | 期货                       |
 | investing_fx           | 货币（外汇）               |
 | investing_etf          | 交易所交易基金             |
@@ -268,6 +268,7 @@ Authorization: Bearer akshare
    ```http
    GET {BASE_URL}/api/public/investing_stock_global?symbols=AAPL
    GET {BASE_URL}/api/public/investing_stock_global?symbols=AAPL,MSFT
+   GET {BASE_URL}/api/public/investing_stock_global?symbols=600519.SH,002340.SZ  # A 股通过 AKShare
    GET {BASE_URL}/api/public/investing_crypto?symbols=BTC,ETH
    ```
 
@@ -304,22 +305,26 @@ Authorization: Bearer akshare
    **返回**：JSON 数组，每项为一条资产信息（含 `ticker` 等，可用于历史接口的 `investing_id`）。
 
 3. **拉取历史数据**  
-   同时传入 `investing_id`、`from_date`、`to_date` 时，返回该资产在指定日期范围内的历史数据。
+   同时传入 `investing_id`（或 A 股时用 `symbol`）、`from_date`、`to_date` 时，返回该资产在指定日期范围内的历史数据。
 
    **Query 参数**：
 
    | 参数名       | 类型          | 必填 | 说明                                              |
    | ------------ | ------------- | ---- | ------------------------------------------------- |
-   | investing_id | string        | 是   | Investing 资产 ID（可从列表接口的 `ticker` 取得） |
+   | investing_id | string        | 是*  | Investing 资产 ID（可从列表接口的 `ticker` 取得） |
+   | symbol       | string        | 是*  | A 股代码（如 600519.SH、002340.SZ），与 investing_id 二选一 |
    | from_date    | string        | 是   | 开始日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`         |
    | to_date      | string        | 是   | 结束日期，格式同上                                |
-   | interval     | string/number | 否   | 周期：`D`/`W`/`M` 或 `1/5/15/30/60/300`（分钟）   |
+   | interval     | string/number | 否   | 周期：`D`/`W`/`M`（A 股仅支持日/周/月）          |
+
+   \* `investing_id` 用于全球股票；`symbol` 用于 A 股（上证/深圳），二者必填其一。
 
    **请求示例**：
 
    ```http
    GET {BASE_URL}/api/public/investing_stock_global?investing_id=6408&from_date=2024-01-01&to_date=2024-01-10
    GET {BASE_URL}/api/public/investing_stock_global?investing_id=6408&from_date=2024-01-01&to_date=2024-01-10&interval=D
+   GET {BASE_URL}/api/public/investing_stock_global?symbol=600519.SH&from_date=2025-01-01&to_date=2025-02-28  # A 股历史
    ```
 
    **返回**：JSON 数组，每项为一条 K 线/行情记录（字段以 Investing 返回为准，如开高低收等）。

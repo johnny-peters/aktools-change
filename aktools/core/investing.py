@@ -4,6 +4,8 @@ Investing.com 数据抓取模块 (cn.investing.com)
 支持：指数、全球股票(非A股港股)、期货、货币、ETF、国债、基金、虚拟货币
 使用 investiny 访问公开数据，无需登录。
 历史数据支持智能缓存：按 investing_id+interval 存储日期区间，部分命中时仅爬取缺失区间并合并。
+
+对上证/深圳 A 股（如 600519.SH、002340.SZ）：Investing 无数据，自动回退到 AKShare 获取。
 """
 import logging
 import re
@@ -21,12 +23,13 @@ _HISTORICAL_CACHE_LOCK = Lock()
 # 优先使用 curl_cffi 模拟浏览器 TLS/指纹，以绕过 Investing.com 的 Cloudflare 403
 _USE_CURL_CFFI: Optional[bool] = None
 _CURL_SESSION: Optional[Any] = None
+_CURL_IMPERSONATE: Optional[str] = None
 
 
 def _get_http_client():
     import os as _os
 
-    global _USE_CURL_CFFI, _CURL_SESSION
+    global _USE_CURL_CFFI, _CURL_SESSION, _CURL_IMPERSONATE
     if _USE_CURL_CFFI is None:
         try:
             from curl_cffi import requests as _curl_requests  # noqa: F401
@@ -39,13 +42,14 @@ def _get_http_client():
         if _CURL_SESSION is None:
             from curl_cffi import requests as curl_requests
 
-            # 可通过环境变量 INVESTING_IMPERSONATE 覆盖（如 chrome124、safari184），以应对 403
-            impersonate = _os.getenv("INVESTING_IMPERSONATE", "chrome124")
+            # 可通过环境变量 INVESTING_IMPERSONATE 覆盖（如 chrome136、safari184），以应对 403
+            impersonate = _os.getenv("INVESTING_IMPERSONATE", "chrome136")
             _CURL_SESSION = curl_requests.Session(impersonate=impersonate)
+            _CURL_IMPERSONATE = impersonate
             logger.info("Investing: curl_cffi impersonate=%s", impersonate)
-        return ("curl_cffi", _CURL_SESSION)
+        return ("curl_cffi", _CURL_SESSION, _CURL_IMPERSONATE)
     import httpx
-    return ("httpx", httpx)
+    return ("httpx", httpx, None)
 
 # item_id -> investiny search type
 INVESTING_ITEM_IDS = {
@@ -165,8 +169,11 @@ def _build_headers() -> Dict[str, str]:
 def _request_to_investing(
     endpoint: str, params: Dict[str, Any], timeout: int = 12
 ) -> Union[Dict[str, Any], List[Dict[str, Any]]]:
+    import os as _os
+
+    global _CURL_SESSION, _CURL_IMPERSONATE
     url = f"https://tvc6.investing.com/{uuid4().hex}/0/0/0/0/{endpoint}"
-    client_type, client = _get_http_client()
+    client_type, client, impersonate = _get_http_client()
     if client_type == "curl_cffi":
         # impersonate 已设置 UA 等，仅补充 CORS 相关头以降低 403 概率
         resp = client.get(
@@ -178,6 +185,38 @@ def _request_to_investing(
                 "Origin": "https://cn.investing.com",
             },
         )
+        if resp.status_code == 403:
+            try:
+                from curl_cffi import requests as curl_requests
+
+                candidates = ["chrome136", "safari184", "chrome124"]
+                env_imp = _os.getenv("INVESTING_IMPERSONATE", "").strip()
+                if env_imp:
+                    candidates = [env_imp] + [x for x in candidates if x != env_imp]
+                if impersonate:
+                    candidates = [x for x in candidates if x != impersonate] + [impersonate]
+                for imp in candidates:
+                    try:
+                        session = curl_requests.Session(impersonate=imp)
+                        retry_resp = session.get(
+                            url,
+                            params=params,
+                            timeout=timeout,
+                            headers={
+                                "Referer": "https://cn.investing.com/",
+                                "Origin": "https://cn.investing.com",
+                            },
+                        )
+                        if retry_resp.status_code == 200:
+                            _CURL_SESSION = session
+                            _CURL_IMPERSONATE = imp
+                            resp = retry_resp
+                            logger.info("Investing: 403 后切换 impersonate=%s 重试成功", imp)
+                            break
+                    except Exception:
+                        continue
+            except Exception:
+                pass
     else:
         headers = _build_headers()
         resp = client.get(url, params=params, headers=headers, timeout=timeout)
@@ -273,7 +312,11 @@ def _resolve_symbol_to_investing_id(
     if not t:
         return None
     search_type = _SEARCH_TYPE_OVERRIDE.get(item_id, t)
-    kwargs: Dict[str, Any] = {"query": symbol.strip(), "limit": 5, "type": search_type}
+    query_symbol = symbol.strip()
+    if item_id == "investing_stock_global" and _is_a_share_symbol(query_symbol):
+        # search 对 600519.SH / 002340.SZ 返回空，A 股用纯 6 位代码查询
+        query_symbol = _normalize_a_share_code(query_symbol) or query_symbol
+    kwargs: Dict[str, Any] = {"query": query_symbol, "limit": 5, "type": search_type}
     if exchange:
         kwargs["exchange"] = exchange
     try:
@@ -281,6 +324,30 @@ def _resolve_symbol_to_investing_id(
     except Exception:
         return None
     if not isinstance(res, list) or not res:
+        return None
+    # A 股优先做精确匹配，避免 query=002340 命中到非 A 股 ticker。
+    if item_id == "investing_stock_global" and _is_a_share_symbol(symbol):
+        code = _normalize_a_share_code(symbol)
+        m = re.match(r"^\d{6}(?:\.(SH|SZ))?$", symbol.strip().upper())
+        suffix = m.group(1) if m else ""
+        for r in res:
+            if not isinstance(r, dict):
+                continue
+            symbol_text = str(r.get("symbol") or "").strip().upper()
+            exchange_text = str(r.get("exchange") or "").strip().upper()
+            if code and not (symbol_text == code or symbol_text.endswith(code)):
+                continue
+            if suffix == "SH" and exchange_text and ("SHANGHAI" not in exchange_text and "SSE" not in exchange_text):
+                continue
+            if suffix == "SZ" and exchange_text and ("SHENZHEN" not in exchange_text and "SZSE" not in exchange_text):
+                continue
+            ticker = r.get("ticker") or r.get("id")
+            if ticker is None:
+                continue
+            try:
+                return int(ticker)
+            except (TypeError, ValueError):
+                continue
         return None
     for r in res:
         if not isinstance(r, dict):
@@ -293,6 +360,89 @@ def _resolve_symbol_to_investing_id(
         except (TypeError, ValueError):
             continue
     return None
+
+
+def _is_a_share_symbol(symbol: str) -> bool:
+    """判断是否为 A 股代码格式（6 位数字，可选 .SH/.SZ 后缀）。"""
+    if not symbol or not isinstance(symbol, str):
+        return False
+    s = symbol.strip().upper()
+    return bool(re.match(r"^\d{6}(\.(SH|SZ))?$", s))
+
+
+def _normalize_a_share_code(symbol: str) -> str:
+    """从 600519.SH 或 002340.SZ 提取纯代码 600519、002340。"""
+    if not symbol or not isinstance(symbol, str):
+        return ""
+    s = symbol.strip().upper()
+    m = re.match(r"^(\d{6})(\.(SH|SZ))?$", s)
+    return m.group(1) if m else ""
+
+
+def _fetch_a_share_quote_akshare(
+    symbol_display: str, code: str, retries: int = 2
+) -> Optional[Dict[str, Any]]:
+    """通过 AKShare 获取 A 股行情，拼成与 Investing 兼容的 quote 格式。"""
+    try:
+        import akshare as ak  # noqa: F401
+    except ImportError:
+        return None
+    today = datetime.now(timezone.utc)
+    end_date = today.strftime("%Y%m%d")
+    from_date = (today - timedelta(days=10)).strftime("%Y%m%d")
+    last_err = None
+    for attempt in range(max(1, retries)):
+        try:
+            df = ak.stock_zh_a_hist(
+                symbol=code, period="daily", start_date=from_date, end_date=end_date, adjust=""
+            )
+            last_err = None
+            break
+        except Exception as e:
+            last_err = e
+            if attempt < retries - 1:
+                import time as _time
+                _time.sleep(0.5 * (attempt + 1))
+    if last_err:
+        logger.warning("akshare A股行情 %s failed: %s", code, last_err)
+        return None
+    if df is None or len(df) < 1:
+        return None
+    last = df.iloc[-1]
+    prev = df.iloc[-2] if len(df) >= 2 else last
+    try:
+        close = last["收盘"]
+        open_p = last["开盘"]
+        high_p = last["最高"]
+        low_p = last["最低"]
+        volume = last["成交量"]
+        date_val = last["日期"]
+        prev_close = prev["收盘"] if len(df) >= 2 else open_p
+    except (KeyError, TypeError):
+        return None
+    if close is None or (isinstance(close, float) and (close != close)):  # NaN
+        return None
+    date_str = date_val.strftime("%Y-%m-%d") if hasattr(date_val, "strftime") else str(date_val)
+    ch: Optional[float] = None
+    chp: Optional[float] = None
+    if prev_close is not None and prev_close != 0:
+        try:
+            ch = round(float(close) - float(prev_close), 6)
+            chp = round((ch / float(prev_close)) * 100, 4)
+        except (TypeError, ValueError):
+            pass
+    return {
+        "symbol": symbol_display,
+        "lp": close,
+        "open_price": open_p,
+        "high_price": high_p,
+        "low_price": low_p,
+        "prev_close_price": prev_close,
+        "ch": ch,
+        "chp": chp,
+        "volume": volume,
+        "date": date_str,
+    }
 
 
 def _quote_has_price(row: Dict[str, Any]) -> bool:
@@ -346,6 +496,21 @@ def _quote_from_history(
     }
 
 
+def _quote_from_history_with_fallback(
+    symbol_name: str,
+    investing_id: int,
+    from_date: str,
+    to_date: str,
+    intervals: List[Union[str, int]],
+) -> Optional[Dict[str, Any]]:
+    """按多个分辨率依次尝试生成 quote，直到拿到有效价格。"""
+    for iv in intervals:
+        row = _quote_from_history(symbol_name, investing_id, from_date, to_date, interval=iv)
+        if row is not None and _quote_has_price(row):
+            return row
+    return None
+
+
 def fetch_investing_quotes(
     item_id: str,
     symbols: List[str],
@@ -367,13 +532,34 @@ def fetch_investing_quotes(
         from_date = (today - timedelta(days=2)).strftime("%Y-%m-%d")
         out: List[Dict[str, Any]] = []
         for sym in symbols:
+            is_a_share = item_id == "investing_stock_global" and _is_a_share_symbol(sym)
             tid = _resolve_symbol_to_investing_id(item_id, sym, exchange=exchange)
-            if tid is None:
+            if tid is not None:
+                is_a_share = item_id == "investing_stock_global" and _is_a_share_symbol(sym)
+                # A 股先尝试 1 分钟，若 no_data 再尝试 5 分钟和日线（仍走 Investing）
+                intervals: List[Union[str, int]] = [1, 5, "D"] if is_a_share else [1]
+                row = _quote_from_history_with_fallback(sym, tid, from_date, to_date, intervals)
+                if row is not None:
+                    out.append(row)
+                    if is_a_share:
+                        logger.info("investing quotes: A股 %s 通过 Investing 获取", sym)
+                    continue
+                if is_a_share:
+                    logger.warning("investing quotes: A股 %s Investing 无数据，回退 AKShare", sym)
+            elif not is_a_share:
                 logger.warning("investing quotes: no id for symbol=%s", sym)
-                continue
-            row = _quote_from_history(sym, tid, from_date, to_date, interval=1)
-            if row is not None:
-                out.append(row)
+
+            if is_a_share:
+                code = _normalize_a_share_code(sym)
+                if code:
+                    row = _fetch_a_share_quote_akshare(sym, code)
+                    if row is not None:
+                        out.append(row)
+                        logger.info("investing quotes: A股 %s 通过 AKShare 回退成功", sym)
+                    else:
+                        logger.warning("investing quotes: A股 %s AKShare 无数据", sym)
+                else:
+                    logger.warning("investing quotes: invalid A-share symbol=%s", sym)
         return out, None
     except Exception as e:
         logger.exception("investing quotes symbols=%s failed: %s", symbols, e)
@@ -578,14 +764,58 @@ def fetch_investing_historical_cached(
     return out, None
 
 
+def _fetch_a_share_historical_akshare(
+    code: str, from_date: str, to_date: str, interval: str = "D", retries: int = 2
+) -> Tuple[Optional[List[Dict[str, Any]]], Optional[Exception]]:
+    """通过 AKShare 获取 A 股历史 K 线，转为 Investing 兼容格式。"""
+    try:
+        import akshare as ak  # noqa: F401
+    except ImportError:
+        return None, Exception("akshare 未安装，无法获取 A 股历史数据")
+    from_fmt = from_date.replace("-", "")[:8]
+    to_fmt = to_date.replace("-", "")[:8]
+    period = "daily" if interval in ("D", "d", "1") else ("weekly" if interval in ("W", "w") else "monthly")
+    last_err = None
+    for attempt in range(max(1, retries)):
+        try:
+            df = ak.stock_zh_a_hist(
+                symbol=code, period=period, start_date=from_fmt, end_date=to_fmt, adjust=""
+            )
+            last_err = None
+            break
+        except Exception as e:
+            last_err = e
+            if attempt < retries - 1:
+                import time as _time
+                _time.sleep(0.5 * (attempt + 1))
+    if last_err:
+        return None, last_err
+    if df is None or len(df) == 0:
+        return [], None
+    rows = []
+    for _, r in df.iterrows():
+        d = r.get("日期")
+        date_str = d.strftime("%m/%d/%Y") if hasattr(d, "strftime") else str(d)
+        rows.append({
+            "date": date_str,
+            "open": r.get("开盘"),
+            "high": r.get("最高"),
+            "low": r.get("最低"),
+            "close": r.get("收盘"),
+            "volume": r.get("成交量"),
+        })
+    return rows, None
+
+
 def fetch_investing_data(
     item_id: str,
     params: Dict[str, str],
 ) -> Tuple[Optional[Any], Optional[Exception]]:
     """
     统一入口：根据 params 决定拉取列表、历史或实时行情。
-    - 若提供 symbols（如 symbols=AAPL 或 symbols=AAPL,MSFT）：拉取实时行情（quotes）。
+    - 若提供 symbols（如 symbols=AAPL 或 symbols=600519.SH）：拉取实时行情（quotes）。
     - 若提供 investing_id + from_date + to_date：拉取历史数据。
+    - 若提供 symbol + from_date + to_date 且为 A 股：先用 Investing，失败再回退 AKShare。
     - 否则：拉取该类型资产列表（可带 query, limit, exchange）。
     返回 (list[dict], None) 或 (None, Exception)。
     """
@@ -605,6 +835,30 @@ def fetch_investing_data(
     pid = (params.get("investing_id") or "").strip()
     from_date = (params.get("from_date") or "").strip()
     to_date = (params.get("to_date") or "").strip()
+
+    # A 股历史：symbol + from_date + to_date（无 investing_id 时）
+    symbol_param = (params.get("symbol") or "").strip()
+    if not pid and symbol_param and from_date and to_date and item_id == "investing_stock_global":
+        if _is_a_share_symbol(symbol_param):
+            code = _normalize_a_share_code(symbol_param)
+            if code:
+                interval = (params.get("interval") or "D").strip()
+                try:
+                    interval = int(interval)
+                except ValueError:
+                    interval = interval.upper()
+                tid = _resolve_symbol_to_investing_id(item_id, symbol_param, exchange=(params.get("exchange") or "").strip())
+                if tid is not None:
+                    content, err = fetch_investing_historical_cached(tid, from_date, to_date, interval=interval)
+                    if err is None and content:
+                        logger.info("investing 历史: A股 %s 通过 Investing 获取", symbol_param)
+                        return content or [], None
+                    logger.warning("investing 历史: A股 %s Investing 无数据，回退 AKShare", symbol_param)
+                content, err = _fetch_a_share_historical_akshare(code, from_date, to_date, str(interval))
+                if err is not None:
+                    return None, err
+                logger.info("investing 历史: A股 %s 通过 AKShare 获取", symbol_param)
+                return content or [], None
 
     if pid and from_date and to_date:
         try:

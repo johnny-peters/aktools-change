@@ -7,6 +7,7 @@ Desc: HTTP 模式主文件
 import json
 import logging
 import os
+import re
 import time
 import urllib.parse
 from logging.handlers import TimedRotatingFileHandler
@@ -47,6 +48,14 @@ _cache_lock = Lock()
 _cache: Dict[Tuple[str, str], Dict[str, Any]] = {}
 
 
+def _normalize_a_share_symbol_for_cache(symbol: str) -> str:
+    """600519.SH / 002340.SZ -> 600519 / 002340，用于缓存 key 统一。"""
+    if not symbol:
+        return symbol
+    m = re.match(r"^(\d{6})(\.(SH|SZ))?$", symbol.strip().upper())
+    return m.group(1) if m else symbol
+
+
 def _make_cache_key(item_id: str, request: Request) -> Tuple[str, str]:
     if is_investing_item(item_id):
         query_items = list(request.query_params.items())
@@ -56,6 +65,7 @@ def _make_cache_key(item_id: str, request: Request) -> Tuple[str, str]:
             query_key = ""
         return item_id, query_key
     symbol = (request.query_params.get("symbol") or "").strip()
+    symbol = _normalize_a_share_symbol_for_cache(symbol)
     return item_id, symbol
 
 
@@ -147,6 +157,7 @@ def root(
             },
         )
     eval_str = decode_params.replace("&", '", ').replace("=", '="') + '"'
+    eval_str = re.sub(r'symbol="(\d{6})\.(SH|SZ)"', r'symbol="\1"', eval_str, flags=re.IGNORECASE)
     has_params = bool(request.query_params)
     content, error = _fetch_akshare_data(item_id, eval_str, has_params)
     if error is None and content is not None:
@@ -171,9 +182,13 @@ def root(
             content={"error": "该接口返回数据为空，请确认参数是否正确：https://akshare.akfamily.xyz"},
         )
 
+    logger.error("接口处理失败: %s - %s", item_id, error, exc_info=True)
+    err_hint = "接口处理失败，请稍后重试"
+    if error and "Connection" in type(error).__name__:
+        err_hint = "数据源连接失败，可能是网络问题，请检查网络后重试"
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-        content={"error": "接口处理失败，请稍后重试"},
+        content={"error": err_hint},
     )
 
 
@@ -238,6 +253,8 @@ def root(request: Request, item_id: str):
     else:
         eval_str = decode_params.replace("&", '", ').replace("=", '="') + '"'
         eval_str = eval_str.replace("+", " ")  # 处理传递的参数中带空格的情况
+    # A 股 symbol 规范：600519.SH / 002340.SZ -> 600519 / 002340（AKShare 需纯 6 位代码）
+    eval_str = re.sub(r'symbol="(\d{6})\.(SH|SZ)"', r'symbol="\1"', eval_str, flags=re.IGNORECASE)
     has_params = bool(request.query_params)
     content, error = _fetch_akshare_data(item_id, eval_str, has_params)
     if error is None and content is not None:
@@ -267,10 +284,13 @@ def root(request: Request, item_id: str):
             content={"error": "该接口返回数据为空，请确认参数是否正确：https://akshare.akfamily.xyz"},
         )
 
-    logger.info(f"接口处理失败: {item_id}")
+    logger.error("接口处理失败: %s - %s", item_id, error, exc_info=True)
+    err_hint = "接口处理失败，请稍后重试"
+    if error and "Connection" in type(error).__name__:
+        err_hint = "数据源连接失败，可能是网络问题，请检查网络后重试"
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-        content={"error": "接口处理失败，请稍后重试"},
+        content={"error": err_hint},
     )
 
 

@@ -1,353 +1,715 @@
-2026-02-24 13:22:11,750 - AKToolsLog - INFO - 这是一个信息级别的日志消息
-2026-02-24 13:22:30,877 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+2026-02-28 10:09:40,929 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-28 10:09:40,957 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-28 10:09:40,957 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome124
+2026-02-28 10:09:41,733 - AKToolsLog - INFO - 获取到 Investing investing_bond 的数据
+2026-02-28 10:09:43,449 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:09:43,750 - AKToolsLog - INFO - 获取到 Investing investing_etf 的数据
+2026-02-28 10:09:45,525 - AKToolsLog - INFO - 获取到 Investing investing_fund 的数据
+2026-02-28 10:09:46,492 - AKToolsLog - INFO - 获取到 Investing investing_futures 的数据
+2026-02-28 10:09:47,686 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:09:48,642 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:09:49,467 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:09:50,267 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:09:51,542 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:09:54,592 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:09:54,918 - AKToolsLog - INFO - Investing 爬取缺失区间: id=6408 [2024-01-01 ~ 2024-01-10]
+2026-02-28 10:09:54,918 - AKToolsLog - INFO - 获取到 Investing investing_bond 的数据
+2026-02-28 10:09:55,317 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "e:\projects\aktools\aktools\core\investing.py", line 359, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "e:\projects\aktools\aktools\core\investing.py", line 161, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "e:\projects\aktools\aktools\core\investing.py", line 144, in _request_to_investing
-    raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 13:22:30,879 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:24:16,149 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
-2026-02-24 13:24:16,149 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:24:23,124 - AKToolsLog - INFO - 命中缓存: investing_stock_global
-2026-02-24 13:26:52,731 - AKToolsLog - INFO - 这是一个信息级别的日志消息
-2026-02-24 13:27:04,110 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
-Traceback (most recent call last):
-  File "e:\projects\aktools\aktools\core\investing.py", line 374, in fetch_investing_historical
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
     data = _request_to_investing(endpoint="history", params=params)  # type: ignore
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "e:\projects\aktools\aktools\core\investing.py", line 144, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 13:27:04,112 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:29:31,161 - AKToolsLog - INFO - 这是一个信息级别的日志消息
-2026-02-24 13:29:39,589 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
-2026-02-24 13:29:40,324 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:30:44,597 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
-2026-02-24 13:30:45,429 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 13:30:45,434 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 13:30:47,391 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 13:30:48,568 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:31:44,153 - AKToolsLog - INFO - 获取到 stock_hk_spot_em 的数据
-2026-02-24 13:31:46,288 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:31:47,360 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
-2026-02-24 13:31:48,899 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
-2026-02-24 13:33:29,112 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
-2026-02-24 13:33:29,931 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 13:33:29,931 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 13:33:30,716 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 13:33:31,386 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:34:26,709 - AKToolsLog - INFO - 获取到 stock_hk_spot_em 的数据
-2026-02-24 13:34:27,913 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:34:28,548 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
-2026-02-24 13:34:29,205 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
-2026-02-24 13:36:09,420 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
-2026-02-24 13:36:10,263 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 13:36:10,263 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 13:36:11,730 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 13:36:13,307 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:37:10,136 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
-2026-02-24 13:37:10,136 - AKToolsLog - INFO - 命中缓存: investing_crypto
-2026-02-24 13:37:10,144 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 13:37:10,144 - AKToolsLog - INFO - 命中缓存: investing_crypto
-2026-02-24 13:37:10,256 - AKToolsLog - INFO - 命中缓存: investing_stock_global
-2026-02-24 13:37:10,572 - AKToolsLog - INFO - 获取到 stock_hk_spot_em 的数据
-2026-02-24 13:37:11,271 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 13:37:13,357 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
-2026-02-24 13:37:15,573 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
-2026-02-24 13:38:05,392 - AKToolsLog - INFO - 获取到 stock_hk_spot_em 的数据
-2026-02-24 13:38:05,421 - AKToolsLog - INFO - 命中缓存: investing_stock_global
-2026-02-24 13:38:05,549 - AKToolsLog - INFO - 命中缓存: investing_index
-2026-02-24 13:38:05,673 - AKToolsLog - INFO - 命中缓存: investing_fx
-2026-02-24 14:39:20,509 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
-2026-02-24 14:39:21,718 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 14:39:21,718 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 14:39:22,609 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 14:39:23,667 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 14:39:26,129 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
-2026-02-24 14:39:26,486 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
-2026-02-24 14:39:32,587 - AKToolsLog - INFO - 获取到 stock_hk_daily 的数据
-2026-02-24 14:40:22,557 - AKToolsLog - INFO - 获取到 stock_hk_spot_em 的数据
-2026-02-24 14:40:25,441 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 14:40:26,102 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
-2026-02-24 14:40:26,596 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
-2026-02-24 14:57:32,894 - AKToolsLog - INFO - 这是一个信息级别的日志消息
-2026-02-24 14:57:32,921 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
-2026-02-24 14:57:36,335 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:09:55,321 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:09:55,321 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:09:55,684 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:36,338 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:40,364 - AKToolsLog - ERROR - investing list investing_crypto failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:09:55,685 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:09:55,685 - AKToolsLog - INFO - 获取到 Investing investing_etf 的数据
+2026-02-28 10:09:56,901 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:40,364 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:41,430 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:09:56,901 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:09:56,908 - AKToolsLog - INFO - 获取到 Investing investing_fund 的数据
+2026-02-28 10:09:58,143 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:41,432 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:42,963 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:09:58,143 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:09:58,143 - AKToolsLog - INFO - 获取到 Investing investing_futures 的数据
+2026-02-28 10:09:59,410 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:42,964 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:43,821 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:09:59,416 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:09:59,416 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:10:01,193 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:43,821 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:45,697 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:10:01,193 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:10:01,193 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:10:02,234 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:45,698 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:46,055 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:10:02,243 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:10:02,243 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:10:04,077 - AKToolsLog - INFO - Investing 爬取缺失区间: id=6408 [2024-01-01 ~ 2024-01-31]
+2026-02-28 10:10:04,077 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:10:04,085 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-02-28 10:10:06,751 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:10:11,169 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:10:11,197 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-02-28 10:10:43,123 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-28 10:12:53,427 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:13:05,778 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-28 10:13:13,459 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:13:16,611 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:14:38,050 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-28 10:14:46,778 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:15:31,018 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:16:37,200 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:25:50,718 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:25:50,956 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-28 10:25:50,957 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome124
+2026-02-28 10:25:54,144 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:25:54,150 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:25:57,287 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:25:57,287 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:25:57,294 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:25:59,174 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:26:01,753 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:26:01,757 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:26:01,793 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:26:01,797 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:26:01,801 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:26:01,805 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:26:01,915 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-02-28 10:26:13,011 - AKToolsLog - INFO - 接口处理失败: stock_hk_spot_em
+2026-02-28 10:26:13,173 - AKToolsLog - INFO - 接口处理失败: stock_hk_spot_em
+2026-02-28 10:26:13,386 - AKToolsLog - INFO - 获取到 stock_hk_hist_min_em 的数据
+2026-02-28 10:26:16,792 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:26:16,956 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist_min_em
+2026-02-28 10:26:17,153 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:26:18,469 - AKToolsLog - ERROR - investing historical id=944716 failed: Request to Investing.com API failed with error message: no_data.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:46,056 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:47,097 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:26:18,473 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:26:19,026 - AKToolsLog - WARNING - akshare A股行情 002340 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:26:19,027 - AKToolsLog - WARNING - investing quotes: A股 002340.SZ AKShare 无数据
+2026-02-28 10:26:19,030 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:26:19,218 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist_min_em
+2026-02-28 10:26:19,397 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:26:20,991 - AKToolsLog - ERROR - investing historical id=100673 failed: Request to Investing.com API failed with error message: no_data.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:47,097 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:47,481 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:26:20,994 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:26:21,539 - AKToolsLog - WARNING - akshare A股行情 600519 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:26:21,540 - AKToolsLog - WARNING - investing quotes: A股 600519.SH AKShare 无数据
+2026-02-28 10:26:21,542 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:26:23,141 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:26:25,366 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:27:06,471 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:27:07,621 - AKToolsLog - INFO - Investing 爬取缺失区间: id=1158819 [2025-10-26 ~ 2026-02-28]
+2026-02-28 10:27:07,638 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:27:16,788 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:27:18,957 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:27:18,960 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:27:21,988 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:27:21,988 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:27:21,988 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:27:24,739 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:27:30,846 - AKToolsLog - INFO - 接口处理失败: stock_hk_spot_em
+2026-02-28 10:27:31,021 - AKToolsLog - INFO - 抓取失败，返回缓存: stock_hk_hist_min_em
+2026-02-28 10:27:32,963 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:27:33,111 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist_min_em
+2026-02-28 10:27:33,236 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:27:34,416 - AKToolsLog - ERROR - investing historical id=944716 failed: Request to Investing.com API failed with error message: no_data.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:47,481 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:50,949 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:27:34,423 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:27:35,217 - AKToolsLog - WARNING - akshare A股行情 002340 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:27:35,218 - AKToolsLog - WARNING - investing quotes: A股 002340.SZ AKShare 无数据
+2026-02-28 10:27:35,218 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:27:35,365 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist_min_em
+2026-02-28 10:27:35,506 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:27:37,469 - AKToolsLog - ERROR - investing historical id=100673 failed: Request to Investing.com API failed with error message: no_data.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:50,949 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:51,557 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:27:37,469 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:27:38,038 - AKToolsLog - WARNING - akshare A股行情 600519 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:27:38,038 - AKToolsLog - WARNING - investing quotes: A股 600519.SH AKShare 无数据
+2026-02-28 10:27:38,038 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:27:42,373 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:27:44,436 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:30:03,735 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:04,363 - AKToolsLog - INFO - Investing 爬取缺失区间: id=252 [2025-10-26 ~ 2026-02-28]
+2026-02-28 10:30:04,363 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:14,653 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:30:15,819 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:30:15,827 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:30:18,070 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:30:18,070 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:30:18,078 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:30:20,836 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:21,697 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:30:21,702 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:30:21,707 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:30:21,711 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:30:21,716 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:30:21,720 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:30:21,833 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-02-28 10:30:26,404 - AKToolsLog - INFO - 接口处理失败: stock_hk_spot_em
+2026-02-28 10:30:26,554 - AKToolsLog - INFO - 接口处理失败: stock_hk_spot_em
+2026-02-28 10:30:26,562 - AKToolsLog - INFO - 抓取失败，返回缓存: stock_hk_hist_min_em
+2026-02-28 10:30:26,734 - AKToolsLog - INFO - 抓取失败，返回缓存: stock_hk_hist_min_em
+2026-02-28 10:30:28,462 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:28,629 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist_min_em
+2026-02-28 10:30:28,771 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:30:30,489 - AKToolsLog - ERROR - investing historical id=944716 failed: Request to Investing.com API failed with error message: no_data.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:51,564 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:52,508 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:30:30,489 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:30,737 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:30,881 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist_min_em
+2026-02-28 10:30:31,013 - AKToolsLog - WARNING - akshare A股行情 002340 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:30:31,013 - AKToolsLog - WARNING - investing quotes: A股 002340.SZ AKShare 无数据
+2026-02-28 10:30:31,013 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:31,044 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:30:31,057 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-02-28 10:30:31,070 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-02-28 10:30:31,171 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist_min_em
+2026-02-28 10:30:31,212 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist_min_em
+2026-02-28 10:30:31,329 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:30:31,365 - AKToolsLog - INFO - 接口处理失败: stock_zh_a_hist
+2026-02-28 10:30:32,564 - AKToolsLog - ERROR - investing historical id=100673 failed: Request to Investing.com API failed with error message: no_data.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 391, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:52,508 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:53,139 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:30:32,564 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:33,104 - AKToolsLog - WARNING - akshare A股行情 600519 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:30:33,104 - AKToolsLog - WARNING - investing quotes: A股 600519.SH AKShare 无数据
+2026-02-28 10:30:33,104 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:34,363 - AKToolsLog - ERROR - investing historical id=100673 failed: Request to Investing.com API failed with error message: no_data.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 391, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:53,139 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:54,115 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:30:34,364 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:34,366 - AKToolsLog - INFO - 命中缓存: investing_stock_global
+2026-02-28 10:30:35,597 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:30:36,996 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:30:41,279 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-28 10:30:41,314 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-28 10:30:41,315 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome124
+2026-02-28 10:30:43,453 - AKToolsLog - INFO - 获取到 Investing investing_bond 的数据
+2026-02-28 10:30:44,763 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:30:45,805 - AKToolsLog - INFO - 获取到 Investing investing_etf 的数据
+2026-02-28 10:30:47,739 - AKToolsLog - INFO - 获取到 Investing investing_fund 的数据
+2026-02-28 10:30:48,556 - AKToolsLog - INFO - 获取到 Investing investing_futures 的数据
+2026-02-28 10:30:49,789 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:30:50,672 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:30:51,714 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:54,139 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:30:54,922 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:55,781 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:30:56,831 - AKToolsLog - INFO - Investing 爬取缺失区间: id=6408 [2024-01-01 ~ 2024-01-10]
+2026-02-28 10:30:56,839 - AKToolsLog - INFO - 获取到 Investing investing_bond 的数据
+2026-02-28 10:30:58,731 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 391, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:54,115 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:54,973 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:30:58,731 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:30:58,731 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:30:59,120 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 391, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:54,973 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:55,923 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:30:59,131 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:30:59,131 - AKToolsLog - INFO - 获取到 Investing investing_etf 的数据
+2026-02-28 10:31:00,298 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 391, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:55,923 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:56,298 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:31:00,298 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:31:00,298 - AKToolsLog - INFO - 获取到 Investing investing_fund 的数据
+2026-02-28 10:31:01,616 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 391, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:56,298 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:57,357 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:31:01,616 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:31:01,616 - AKToolsLog - INFO - 获取到 Investing investing_futures 的数据
+2026-02-28 10:31:02,690 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 391, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:57,357 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:57,815 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:31:02,696 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:31:02,696 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:31:05,740 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 391, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:57,817 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:58,740 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:31:05,740 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:31:05,740 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:31:07,090 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
 Traceback (most recent call last):
-  File "E:\projects\aktools\aktools\core\investing.py", line 391, in fetch_investing_historical
-    info = _investing_info(investing_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _investing_info
-    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "E:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "E:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 193, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:58,740 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
-2026-02-24 14:57:58,748 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
-2026-02-24 14:57:59,378 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
-2026-02-24 14:57:59,378 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 15:13:32,540 - AKToolsLog - INFO - 这是一个信息级别的日志消息
-2026-02-24 15:13:40,963 - AKToolsLog - INFO - 获取到 stock_hk_daily 的数据
-2026-02-24 15:14:28,467 - AKToolsLog - INFO - 命中缓存: stock_hk_daily
-2026-02-24 15:15:02,756 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
-2026-02-24 15:15:04,611 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data, try `from_date=12/29/2023`.
+2026-02-28 10:31:07,090 - AKToolsLog - INFO - Investing 爬取缺失区间失败，返回已有缓存: id=6408
+2026-02-28 10:31:07,090 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:31:08,584 - AKToolsLog - INFO - Investing 爬取缺失区间: id=6408 [2024-01-01 ~ 2024-01-31]
+2026-02-28 10:31:08,584 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:31:08,608 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-02-28 10:31:10,683 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:31:18,071 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:31:18,098 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-02-28 10:31:36,647 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-28 10:31:45,644 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:31:45,871 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-28 10:31:45,872 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome124
+2026-02-28 10:31:48,401 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:31:48,411 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:31:50,914 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:31:50,918 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:31:50,922 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:31:53,738 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:31:59,269 - AKToolsLog - ERROR - 接口处理失败: stock_hk_spot_em - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:31:59,476 - AKToolsLog - ERROR - 接口处理失败: stock_hk_hist_min_em - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:32:01,043 - AKToolsLog - ERROR - investing historical id=949842 failed: Request to Investing.com API failed with error message: no_data.
 Traceback (most recent call last):
-  File "e:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "e:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 15:15:04,611 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
-2026-02-24 15:16:03,727 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
-2026-02-24 15:16:03,808 - AKToolsLog - WARNING - investing quotes: no id for symbol=BTC
-2026-02-24 15:16:03,809 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 15:16:03,814 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 15:16:03,905 - AKToolsLog - WARNING - investing quotes: no id for symbol=DOGE
-2026-02-24 15:16:03,905 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 15:16:17,773 - AKToolsLog - INFO - 这是一个信息级别的日志消息
-2026-02-24 15:16:28,076 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
-2026-02-24 15:16:29,793 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:32:01,043 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:32:01,415 - AKToolsLog - WARNING - investing quotes: no id for symbol=1810.HK
+2026-02-28 10:32:01,415 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:32:03,687 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:32:03,864 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:32:04,026 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:32:05,590 - AKToolsLog - ERROR - investing historical id=944716 failed: Request to Investing.com API failed with error message: no_data.
 Traceback (most recent call last):
-  File "e:\projects\aktools\aktools\core\investing.py", line 235, in fetch_investing_list
-    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "e:\projects\aktools\aktools\core\investing.py", line 176, in _request_to_investing
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
     raise ConnectionError(
-ConnectionError: Request to Investing.com API failed with error code: 403.
-2026-02-24 15:16:29,801 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
-2026-02-24 15:20:04,321 - AKToolsLog - INFO - 这是一个信息级别的日志消息
-2026-02-24 15:20:05,731 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
-2026-02-24 15:20:05,825 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
-2026-02-24 15:20:05,825 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome124
-2026-02-24 15:20:09,587 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 15:20:09,606 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 15:20:13,184 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 15:20:15,712 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 15:21:10,101 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
-2026-02-24 15:21:11,146 - AKToolsLog - INFO - 获取到 stock_hk_spot_em 的数据
-2026-02-24 15:21:12,448 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 15:21:12,448 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 15:21:12,459 - AKToolsLog - INFO - 命中缓存: investing_crypto
-2026-02-24 15:21:13,232 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 15:21:15,959 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
-2026-02-24 15:21:17,954 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
-2026-02-24 15:21:54,635 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 15:21:55,344 - AKToolsLog - INFO - Investing 爬取缺失区间: id=6497 [2025-10-22 ~ 2026-02-24]
-2026-02-24 15:21:55,351 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 15:26:18,930 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
-2026-02-24 15:26:23,819 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 15:26:23,825 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 15:26:25,625 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
-2026-02-24 15:26:27,452 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 15:26:28,907 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFR
-2026-02-24 15:26:28,907 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 15:26:35,692 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 15:26:37,133 - AKToolsLog - INFO - Investing 爬取缺失区间: id=252 [2025-10-22 ~ 2026-02-24]
-2026-02-24 15:26:37,133 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
-2026-02-24 15:26:43,698 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 15:26:43,703 - AKToolsLog - INFO - 命中缓存: investing_crypto
-2026-02-24 15:26:43,707 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
-2026-02-24 15:26:43,711 - AKToolsLog - INFO - 命中缓存: investing_crypto
-2026-02-24 15:27:20,574 - AKToolsLog - INFO - 获取到 stock_hk_spot_em 的数据
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:32:05,590 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:32:06,130 - AKToolsLog - WARNING - akshare A股行情 002340 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:32:06,130 - AKToolsLog - WARNING - investing quotes: A股 002340.SZ AKShare 无数据
+2026-02-28 10:32:06,130 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:32:06,280 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:32:06,423 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:32:08,142 - AKToolsLog - ERROR - investing historical id=100673 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 502, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:32:08,142 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:32:08,707 - AKToolsLog - WARNING - akshare A股行情 600519 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:32:08,707 - AKToolsLog - WARNING - investing quotes: A股 600519.SH AKShare 无数据
+2026-02-28 10:32:08,719 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:32:11,739 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:32:13,781 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:32:43,972 - AKToolsLog - INFO - 获取到 stock_hk_daily 的数据
+2026-02-28 10:34:26,766 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:34:29,521 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:34:29,521 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:34:32,457 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:34:39,934 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-28 10:34:43,583 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:34:43,806 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-28 10:34:43,806 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome124
+2026-02-28 10:34:47,431 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:34:47,457 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:34:49,036 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:34:49,046 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:34:49,051 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:34:51,947 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:34:57,020 - AKToolsLog - ERROR - 接口处理失败: stock_hk_spot_em - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:34:57,207 - AKToolsLog - ERROR - 接口处理失败: stock_hk_hist_min_em - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:34:59,157 - AKToolsLog - ERROR - investing historical id=949842 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 513, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:34:59,157 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:34:59,536 - AKToolsLog - WARNING - investing quotes: no id for symbol=1810.HK
+2026-02-28 10:34:59,536 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:35:00,859 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:35:01,023 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:35:01,155 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:35:01,942 - AKToolsLog - WARNING - akshare A股行情 002340 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:35:01,942 - AKToolsLog - WARNING - investing quotes: A股 002340 AKShare 无数据
+2026-02-28 10:35:01,942 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:35:02,734 - AKToolsLog - WARNING - akshare A股行情 002340 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:35:02,734 - AKToolsLog - WARNING - investing quotes: A股 002340.SZ AKShare 无数据
+2026-02-28 10:35:02,734 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:35:02,878 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:35:03,021 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+NoneType: None
+2026-02-28 10:35:03,801 - AKToolsLog - WARNING - akshare A股行情 600519 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:35:03,801 - AKToolsLog - WARNING - investing quotes: A股 600519 AKShare 无数据
+2026-02-28 10:35:03,801 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:35:04,567 - AKToolsLog - WARNING - akshare A股行情 600519 failed: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2026-02-28 10:35:04,567 - AKToolsLog - WARNING - investing quotes: A股 600519.SH AKShare 无数据
+2026-02-28 10:35:04,567 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:35:07,375 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:35:09,254 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:35:13,760 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:35:15,801 - AKToolsLog - INFO - Investing 爬取缺失区间: id=1158819 [2025-10-26 ~ 2026-02-28]
+2026-02-28 10:35:15,808 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:40:01,290 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-28 10:40:08,157 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:40:08,336 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-28 10:40:08,336 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome124
+2026-02-28 10:40:12,187 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:40:12,201 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:40:14,224 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:40:14,234 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:40:14,238 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:40:16,436 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:40:16,873 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=0.000001&beg=19700101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:40:18,209 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=0.000001&beg=19700101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:40:21,926 - AKToolsLog - ERROR - 接口处理失败: stock_hk_spot_em - HTTPSConnectionPool(host='72.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A128+t%3A3%2Cm%3A128+t%3A4%2Cm%3A128+t%3A1%2Cm%3A128+t%3A2&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:40:22,084 - AKToolsLog - ERROR - 接口处理失败: stock_hk_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/trends2/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58&iscr=0&ndays=5&secid=116.01810 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:40:25,361 - AKToolsLog - ERROR - investing historical id=949842 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 540, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:40:25,363 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:40:25,777 - AKToolsLog - WARNING - investing quotes: no id for symbol=1810.HK
+2026-02-28 10:40:25,777 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:40:30,815 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:40:30,959 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&ut=7eea3edcaed734bea9cbfc24409ed989&klt=5&fqt=0&secid=0.002340&beg=0&end=20500000 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:40:31,135 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=0.002340&beg=20260214&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:40:32,943 - AKToolsLog - ERROR - investing historical id=944716 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 540, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:40:32,943 - AKToolsLog - WARNING - investing quotes: A股 002340 Investing 无数据，回退 AKShare
+2026-02-28 10:40:33,795 - AKToolsLog - WARNING - akshare A股行情 002340 failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=0.002340&beg=20260218&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-28 10:40:33,795 - AKToolsLog - WARNING - investing quotes: A股 002340 AKShare 无数据
+2026-02-28 10:40:33,795 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:40:35,054 - AKToolsLog - WARNING - akshare A股行情 002340 failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=0.002340&beg=20260218&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-28 10:40:35,054 - AKToolsLog - WARNING - investing quotes: A股 002340.SZ AKShare 无数据
+2026-02-28 10:40:35,054 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:40:35,236 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&ut=7eea3edcaed734bea9cbfc24409ed989&klt=5&fqt=0&secid=1.600519&beg=0&end=20500000 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:40:35,386 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=1.600519&beg=20260214&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:40:36,909 - AKToolsLog - ERROR - investing historical id=100673 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 540, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 197, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:40:36,909 - AKToolsLog - WARNING - investing quotes: A股 600519 Investing 无数据，回退 AKShare
+2026-02-28 10:40:37,722 - AKToolsLog - WARNING - akshare A股行情 600519 failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=1.600519&beg=20260218&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-28 10:40:37,724 - AKToolsLog - WARNING - investing quotes: A股 600519 AKShare 无数据
+2026-02-28 10:40:37,724 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:40:38,303 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=0.000001&beg=19700101&end=20500101 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:40:39,221 - AKToolsLog - WARNING - akshare A股行情 600519 failed: HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=1.600519&beg=20260218&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+2026-02-28 10:40:39,222 - AKToolsLog - WARNING - investing quotes: A股 600519.SH AKShare 无数据
+2026-02-28 10:40:39,224 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:40:42,284 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:40:44,429 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:49:51,988 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-02-28 10:50:01,355 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:50:01,464 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-02-28 10:50:01,464 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-02-28 10:50:06,728 - AKToolsLog - INFO - Investing: 403 后切换 impersonate=safari184 重试成功
+2026-02-28 10:50:07,835 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:50:08,626 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:50:11,079 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:50:11,094 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:50:14,100 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:50:14,117 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:50:14,143 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:50:16,886 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:50:21,502 - AKToolsLog - ERROR - 接口处理失败: stock_hk_spot_em - HTTPSConnectionPool(host='72.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A128+t%3A3%2Cm%3A128+t%3A4%2Cm%3A128+t%3A1%2Cm%3A128+t%3A2&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:50:21,704 - AKToolsLog - ERROR - 接口处理失败: stock_hk_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/trends2/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58&iscr=0&ndays=5&secid=116.01810 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:50:23,941 - AKToolsLog - ERROR - investing historical id=949842 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 601, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 234, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:50:23,945 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:50:24,348 - AKToolsLog - WARNING - investing quotes: no id for symbol=1810.HK
+2026-02-28 10:50:24,348 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:50:27,678 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:50:27,835 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&ut=7eea3edcaed734bea9cbfc24409ed989&klt=5&fqt=0&secid=0.002340&beg=0&end=20500000 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:50:27,999 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=0.002340&beg=20260214&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:50:30,202 - AKToolsLog - ERROR - investing historical id=944716 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 601, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 234, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:50:30,837 - AKToolsLog - INFO - investing quotes: A股 002340 通过 Investing 获取
+2026-02-28 10:50:30,839 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:50:31,009 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&ut=7eea3edcaed734bea9cbfc24409ed989&klt=5&fqt=0&secid=1.600519&beg=0&end=20500000 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:50:31,167 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=1.600519&beg=20260214&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:50:32,787 - AKToolsLog - ERROR - investing historical id=100673 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 601, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 234, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:50:34,711 - AKToolsLog - INFO - investing quotes: A股 600519 通过 Investing 获取
+2026-02-28 10:50:34,711 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:50:37,091 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:50:40,630 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:50:57,118 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:50:57,768 - AKToolsLog - INFO - Investing 爬取缺失区间: id=100673 [2025-10-26 ~ 2026-02-28]
+2026-02-28 10:50:57,768 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:51:07,543 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:51:09,277 - AKToolsLog - INFO - Investing 爬取缺失区间: id=944716 [2025-10-26 ~ 2026-02-28]
+2026-02-28 10:51:09,277 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:51:16,047 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:51:20,864 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:51:20,864 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:51:27,504 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:51:27,504 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:51:27,522 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:51:31,222 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:51:37,054 - AKToolsLog - ERROR - 接口处理失败: stock_hk_spot_em - HTTPSConnectionPool(host='72.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A128+t%3A3%2Cm%3A128+t%3A4%2Cm%3A128+t%3A1%2Cm%3A128+t%3A2&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:51:37,218 - AKToolsLog - ERROR - 接口处理失败: stock_hk_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/trends2/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58&iscr=0&ndays=5&secid=116.01810 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:51:38,741 - AKToolsLog - ERROR - investing historical id=949842 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 601, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 234, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:51:38,743 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:51:39,135 - AKToolsLog - WARNING - investing quotes: no id for symbol=1810.HK
+2026-02-28 10:51:39,135 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:51:42,671 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:51:42,830 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&ut=7eea3edcaed734bea9cbfc24409ed989&klt=5&fqt=0&secid=0.002340&beg=0&end=20500000 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:51:42,992 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=0.002340&beg=20260214&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:51:43,977 - AKToolsLog - ERROR - investing historical id=944716 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 601, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 234, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:51:45,487 - AKToolsLog - INFO - investing quotes: A股 002340 通过 Investing 获取
+2026-02-28 10:51:45,487 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:51:45,632 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&ut=7eea3edcaed734bea9cbfc24409ed989&klt=5&fqt=0&secid=1.600519&beg=0&end=20500000 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:51:45,783 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=1.600519&beg=20260214&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:51:47,567 - AKToolsLog - ERROR - investing historical id=100673 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 601, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 234, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:51:48,927 - AKToolsLog - INFO - investing quotes: A股 600519 通过 Investing 获取
+2026-02-28 10:51:48,927 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:51:51,820 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:51:55,032 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
+2026-02-28 10:52:20,025 - AKToolsLog - INFO - 获取到 stock_hk_daily 的数据
+2026-02-28 10:54:25,344 - AKToolsLog - INFO - 获取到 crypto_js_spot 的数据
+2026-02-28 10:54:29,647 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:54:29,651 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:54:31,519 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-02-28 10:54:31,527 - AKToolsLog - INFO - 命中缓存: crypto_js_spot
+2026-02-28 10:54:31,543 - AKToolsLog - INFO - 命中缓存: investing_crypto
+2026-02-28 10:54:33,218 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:54:39,672 - AKToolsLog - ERROR - 接口处理失败: stock_hk_spot_em - HTTPSConnectionPool(host='72.push2.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/clist/get?pn=1&pz=100&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f12&fs=m%3A128+t%3A3%2Cm%3A128+t%3A4%2Cm%3A128+t%3A1%2Cm%3A128+t%3A2&fields=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf12%2Cf13%2Cf14%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf23%2Cf24%2Cf25%2Cf22%2Cf11%2Cf62%2Cf128%2Cf136%2Cf115%2Cf152 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:54:39,876 - AKToolsLog - ERROR - 接口处理失败: stock_hk_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/trends2/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf9%2Cf10%2Cf11%2Cf12%2Cf13&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58&iscr=0&ndays=5&secid=116.01810 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:54:40,851 - AKToolsLog - ERROR - investing historical id=949842 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 601, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 234, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:54:40,853 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:54:41,294 - AKToolsLog - WARNING - investing quotes: no id for symbol=1810.HK
+2026-02-28 10:54:41,294 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:54:43,584 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:54:43,807 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&ut=7eea3edcaed734bea9cbfc24409ed989&klt=5&fqt=0&secid=0.002340&beg=0&end=20500000 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:54:43,987 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=0.002340&beg=20260214&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:54:45,575 - AKToolsLog - ERROR - investing historical id=944716 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 601, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 234, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:54:47,268 - AKToolsLog - INFO - investing quotes: A股 002340 通过 Investing 获取
+2026-02-28 10:54:47,271 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:54:47,444 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist_min_em - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&ut=7eea3edcaed734bea9cbfc24409ed989&klt=5&fqt=0&secid=1.600519&beg=0&end=20500000 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:54:47,638 - AKToolsLog - ERROR - 接口处理失败: stock_zh_a_hist - HTTPSConnectionPool(host='push2his.eastmoney.com', port=443): Max retries exceeded with url: /api/qt/stock/kline/get?fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61%2Cf116&ut=7eea3edcaed734bea9cbfc24409ed989&klt=101&fqt=0&secid=1.600519&beg=20260214&end=20260228 (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))
+NoneType: None
+2026-02-28 10:54:49,061 - AKToolsLog - ERROR - investing historical id=100673 failed: Request to Investing.com API failed with error message: no_data.
+Traceback (most recent call last):
+  File "e:\projects\aktools\aktools\core\investing.py", line 601, in fetch_investing_historical
+    data = _request_to_investing(endpoint="history", params=params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\projects\aktools\aktools\core\investing.py", line 234, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error message: no_data.
+2026-02-28 10:54:50,203 - AKToolsLog - INFO - investing quotes: A股 600519 通过 Investing 获取
+2026-02-28 10:54:50,203 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-02-28 10:54:52,055 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-02-28 10:54:53,645 - AKToolsLog - INFO - 获取到 Investing investing_fx 的数据
