@@ -12,6 +12,7 @@ import re
 from datetime import datetime, timezone, timedelta
 from threading import Lock
 from typing import Any, Dict, List, Optional, Tuple, Union
+from urllib.parse import quote_plus
 from uuid import uuid4
 
 logger = logging.getLogger(name="AKToolsLog")
@@ -417,6 +418,166 @@ def _is_china_stock_symbol(symbol: str) -> bool:
     return _is_a_share_symbol(symbol) or _is_hk_stock_symbol(symbol)
 
 
+_TENCENT_INDEX_SYMBOL_MAP: Dict[str, str] = {
+    "IXIC": "usIXIC",            # 纳斯达克综合
+    ".IXIC": "usIXIC",
+    "NASDAQ": "usIXIC",
+    "NDX": "usNDX",              # 纳斯达克100
+    ".NDX": "usNDX",
+    "NASDAQ100": "usNDX",
+    "DJI": "usDJI",              # 道指
+    ".DJI": "usDJI",
+    "DOWJONES": "usDJI",
+    "SPX": "usINX",              # 标普500
+    ".INX": "usINX",
+    "S&P500": "usINX",
+    "SSEC": "sh000001",          # 上证指数
+    "SSE": "sh000001",
+    "SH000001": "sh000001",
+    "000001.SH": "sh000001",
+    "000001.SS": "sh000001",
+    "上证指数": "sh000001",
+}
+
+_US_STOCK_TYPO_MAP: Dict[str, str] = {
+    # 常见误拼：苹果应为 AAPL
+    "APPL": "AAPL",
+}
+
+
+def _quote_updated_at() -> str:
+    """返回统一的行情更新时间（北京时间）。"""
+    cst = timezone(timedelta(hours=8))
+    return datetime.now(cst).strftime("%Y-%m-%d %H:%M:%S")
+
+
+def _safe_float(v: Any) -> Optional[float]:
+    try:
+        s = str(v).strip()
+        if not s:
+            return None
+        return float(s)
+    except (TypeError, ValueError):
+        return None
+
+
+def _normalize_tencent_symbol(item_id: str, symbol: str) -> str:
+    """
+    将外部 symbol 规范为腾讯行情代码。
+    示例：NVDA -> usNVDA, 600519.SH -> sh600519, 000001.SH -> sh000001。
+    """
+    if not symbol or not isinstance(symbol, str):
+        return ""
+    raw = symbol.strip()
+    s = raw.upper()
+
+    # 已是腾讯代码前缀
+    if re.match(r"^(US|SH|SZ|HK)[A-Z0-9\.]+$", s):
+        return s.lower() if s.startswith("HK") else s[0:2].lower() + s[2:]
+
+    if item_id == "investing_index":
+        if s in _TENCENT_INDEX_SYMBOL_MAP:
+            return _TENCENT_INDEX_SYMBOL_MAP[s]
+
+    # 中国股票/指数：000001.SH, 600519, 002594.SZ
+    m = re.match(r"^(\d{6})(?:\.(SH|SZ|SS))?$", s)
+    if m:
+        code = m.group(1)
+        suffix = m.group(2) or ""
+        if suffix in {"SH", "SS"}:
+            return f"sh{code}"
+        if suffix == "SZ":
+            return f"sz{code}"
+        if item_id == "investing_index":
+            # 指数场景下纯数字代码优先按指数规则推断：
+            # 399xxx 通常为深证指数，其余常见 000xxx/9xxxxx 归上证体系。
+            if code.startswith("399"):
+                return f"sz{code}"
+            return f"sh{code}"
+        return f"sh{code}" if code.startswith("6") else f"sz{code}"
+
+    # 港股：0700.HK / 700.HK
+    mhk = re.match(r"^(\d{1,5})(?:\.HK)?$", s)
+    if mhk:
+        return f"hk{mhk.group(1).zfill(5)}"
+
+    # 美股：AAPL / NVDA / BRK.B
+    if re.match(r"^[A-Z][A-Z0-9\.-]{0,9}$", s):
+        us_sym = s.split(".")[0]
+        us_sym = _US_STOCK_TYPO_MAP.get(us_sym, us_sym)
+        return f"us{us_sym}"
+
+    return ""
+
+
+def _parse_tencent_quote(symbol_display: str, text: str) -> Optional[Dict[str, Any]]:
+    """
+    解析腾讯行情响应：
+    v_usAAPL="...~最新价~昨收~今开~...~时间~涨跌额~涨跌幅~最高~最低~..."
+    """
+    if not text or "=" not in text:
+        return None
+    body = text.split("=", 1)[1].strip().strip(";").strip().strip('"')
+    if not body:
+        return None
+    fields = body.split("~")
+    if len(fields) < 35:
+        return None
+
+    last = _safe_float(fields[3])
+    prev_close = _safe_float(fields[4])
+    open_p = _safe_float(fields[5])
+    high_p = _safe_float(fields[33]) if len(fields) > 33 else None
+    low_p = _safe_float(fields[34]) if len(fields) > 34 else None
+    ch = _safe_float(fields[31]) if len(fields) > 31 else None
+    chp = _safe_float(fields[32]) if len(fields) > 32 else None
+    volume = _safe_float(fields[6]) if len(fields) > 6 else None
+    date_raw = fields[30] if len(fields) > 30 else ""
+
+    # A 股常见时间格式 20260403161415，转成可读格式；美股已是 YYYY-MM-DD HH:MM:SS
+    date_str = date_raw
+    if re.match(r"^\d{14}$", date_raw):
+        date_str = (
+            f"{date_raw[0:4]}-{date_raw[4:6]}-{date_raw[6:8]} "
+            f"{date_raw[8:10]}:{date_raw[10:12]}:{date_raw[12:14]}"
+        )
+
+    if last is None:
+        return None
+    return {
+        "symbol": symbol_display,
+        "lp": last,
+        "open_price": open_p,
+        "high_price": high_p,
+        "low_price": low_p,
+        "prev_close_price": prev_close,
+        "ch": ch,
+        "chp": chp,
+        "volume": volume,
+        "date": date_str,
+        "updated_at": _quote_updated_at(),
+    }
+
+
+def _fetch_quote_tencent(symbol_display: str, item_id: str) -> Optional[Dict[str, Any]]:
+    """腾讯行情兜底：用于 Investing symbol 解析失败或上游 403 时。"""
+    code = _normalize_tencent_symbol(item_id, symbol_display)
+    if not code:
+        return None
+    url = f"https://qt.gtimg.cn/q={quote_plus(code)}"
+    try:
+        client_type, client, _ = _get_http_client()
+        if client_type == "curl_cffi":
+            resp = client.get(url, timeout=10)
+        else:
+            resp = client.get(url, timeout=10)
+        if resp.status_code != 200:
+            return None
+        return _parse_tencent_quote(symbol_display, resp.text)
+    except Exception:
+        return None
+
+
 def _fetch_a_share_quote_akshare(
     symbol_display: str, code: str, retries: int = 2
 ) -> Optional[Dict[str, Any]]:
@@ -480,6 +641,7 @@ def _fetch_a_share_quote_akshare(
         "chp": chp,
         "volume": volume,
         "date": date_str,
+        "updated_at": _quote_updated_at(),
     }
 
 
@@ -490,6 +652,23 @@ def _quote_has_price(row: Dict[str, Any]) -> bool:
         return True
     close = row.get("close")
     return close is not None and (isinstance(close, (int, float)) or (isinstance(close, str) and close.strip()))
+
+
+def _prefer_updated_at_for_quote(row: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    行情时间字段规范：
+    - 客户端展示时间优先 updated_at（接口更新时间）
+    - 原始市场时间保留到 market_date（若存在）
+    """
+    if not isinstance(row, dict):
+        return row
+    updated_at = row.get("updated_at")
+    date_val = row.get("date")
+    if isinstance(updated_at, str) and updated_at.strip():
+        if isinstance(date_val, str) and date_val.strip() and date_val != updated_at:
+            row["market_date"] = date_val
+        row["date"] = updated_at
+    return row
 
 
 def _quote_from_history(
@@ -531,6 +710,7 @@ def _quote_from_history(
         "chp": chp,
         "volume": last.get("volume"),
         "date": last.get("date"),
+        "updated_at": _quote_updated_at(),
     }
 
 
@@ -578,7 +758,7 @@ def fetch_investing_quotes(
                 intervals: List[Union[str, int]] = [1, 5, "D"] if is_cn_stock else [1]
                 row = _quote_from_history_with_fallback(sym, tid, from_date, to_date, intervals)
                 if row is not None:
-                    out.append(row)
+                    out.append(_prefer_updated_at_for_quote(row))
                     if is_cn_stock:
                         logger.info("investing quotes: 中国股票 %s 通过 Investing 获取", sym)
                     continue
@@ -592,12 +772,22 @@ def fetch_investing_quotes(
                 if code:
                     row = _fetch_a_share_quote_akshare(sym, code)
                     if row is not None:
-                        out.append(row)
+                        out.append(_prefer_updated_at_for_quote(row))
                         logger.info("investing quotes: A股 %s 通过 AKShare 回退成功", sym)
                     else:
                         logger.warning("investing quotes: A股 %s AKShare 无数据", sym)
                 else:
                     logger.warning("investing quotes: invalid A-share symbol=%s", sym)
+                if out and out[-1].get("symbol") == sym:
+                    continue
+
+            # 非 A 股，或 A 股 AKShare 回退失败：统一走腾讯行情兜底
+            tx_row = _fetch_quote_tencent(sym, item_id)
+            if tx_row is not None and _quote_has_price(tx_row):
+                out.append(_prefer_updated_at_for_quote(tx_row))
+                logger.info("investing quotes: %s 通过腾讯行情回退成功", sym)
+            else:
+                logger.warning("investing quotes: %s 腾讯行情回退失败", sym)
         return out, None
     except Exception as e:
         logger.exception("investing quotes symbols=%s failed: %s", symbols, e)
