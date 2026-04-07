@@ -9,6 +9,8 @@ Investing.com 数据抓取模块 (cn.investing.com)
 """
 import logging
 import re
+import csv
+import io
 from datetime import datetime, timezone, timedelta
 from threading import Lock
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -301,6 +303,10 @@ def fetch_investing_list(
                 filtered.append(row)
         return filtered, None
     except Exception as e:
+        fallback = _fallback_search_assets(item_id, query=query, limit=limit, exchange=exchange)
+        if fallback:
+            logger.warning("investing list %s fallback to local catalog due to error: %s", item_id, e)
+            return fallback, None
         logger.exception("investing list %s failed: %s", item_id, e)
         return None, e
 
@@ -444,11 +450,56 @@ _US_STOCK_TYPO_MAP: Dict[str, str] = {
     "APPL": "AAPL",
 }
 
+_FALLBACK_LIST_CATALOG: Dict[str, List[Dict[str, str]]] = {
+    "investing_stock_global": [
+        {"symbol": "AAPL", "name": "Apple Inc.", "exchange": "NASDAQ", "type": "Stock"},
+        {"symbol": "NVDA", "name": "NVIDIA Corporation", "exchange": "NASDAQ", "type": "Stock"},
+        {"symbol": "MSFT", "name": "Microsoft Corporation", "exchange": "NASDAQ", "type": "Stock"},
+        {"symbol": "AMZN", "name": "Amazon.com Inc.", "exchange": "NASDAQ", "type": "Stock"},
+        {"symbol": "TSLA", "name": "Tesla Inc.", "exchange": "NASDAQ", "type": "Stock"},
+        {"symbol": "GOOGL", "name": "Alphabet Inc.", "exchange": "NASDAQ", "type": "Stock"},
+    ],
+    "investing_index": [
+        {"symbol": "IXIC", "name": "NASDAQ Composite", "exchange": "NASDAQ", "type": "Index"},
+        {"symbol": "SPX", "name": "S&P 500", "exchange": "NYSE", "type": "Index"},
+        {"symbol": "DJI", "name": "Dow Jones Industrial Average", "exchange": "NYSE", "type": "Index"},
+        {"symbol": "000001.SH", "name": "Shanghai Composite", "exchange": "SSE", "type": "Index"},
+    ],
+    "investing_crypto": [
+        {"symbol": "BTC", "name": "Bitcoin", "exchange": "Binance", "type": "Crypto"},
+        {"symbol": "ETH", "name": "Ethereum", "exchange": "Binance", "type": "Crypto"},
+        {"symbol": "BNB", "name": "BNB", "exchange": "Binance", "type": "Crypto"},
+        {"symbol": "SOL", "name": "Solana", "exchange": "Binance", "type": "Crypto"},
+    ],
+}
+
 
 def _quote_updated_at() -> str:
     """返回统一的行情更新时间（北京时间）。"""
     cst = timezone(timedelta(hours=8))
     return datetime.now(cst).strftime("%Y-%m-%d %H:%M:%S")
+
+
+def _fallback_search_assets(
+    item_id: str, query: str = "", limit: int = 50, exchange: str = ""
+) -> List[Dict[str, Any]]:
+    """Investing search 被 403 时的候选列表降级。"""
+    pool = _FALLBACK_LIST_CATALOG.get(item_id, [])
+    q = (query or "").strip().upper()
+    ex = (exchange or "").strip().upper()
+    out: List[Dict[str, Any]] = []
+    for row in pool:
+        symbol = str(row.get("symbol") or "").upper()
+        name = str(row.get("name") or "").upper()
+        row_ex = str(row.get("exchange") or "").upper()
+        if q and q not in symbol and q not in name:
+            continue
+        if ex and ex not in row_ex:
+            continue
+        out.append(dict(row))
+        if len(out) >= limit:
+            break
+    return out
 
 
 def _safe_float(v: Any) -> Optional[float]:
@@ -459,6 +510,27 @@ def _safe_float(v: Any) -> Optional[float]:
         return float(s)
     except (TypeError, ValueError):
         return None
+
+
+def _normalize_crypto_pair(symbol: str) -> str:
+    """
+    规范化加密货币交易对为 Binance 格式。
+    - BTC -> BTCUSDT
+    - BTC/USDT -> BTCUSDT
+    - ETH-USDT -> ETHUSDT
+    """
+    if not symbol or not isinstance(symbol, str):
+        return ""
+    s = symbol.strip().upper().replace("-", "").replace("_", "")
+    if "/" in s:
+        base, quote = s.split("/", 1)
+        s = f"{base}{quote}"
+    if s.endswith(("USDT", "USD", "BUSD", "USDC", "BTC", "ETH")) and len(s) >= 6:
+        return s
+    # 仅输入币种时默认对 USDT
+    if re.match(r"^[A-Z0-9]{2,12}$", s):
+        return f"{s}USDT"
+    return ""
 
 
 def _normalize_tencent_symbol(item_id: str, symbol: str) -> str:
@@ -574,6 +646,208 @@ def _fetch_quote_tencent(symbol_display: str, item_id: str) -> Optional[Dict[str
         if resp.status_code != 200:
             return None
         return _parse_tencent_quote(symbol_display, resp.text)
+    except Exception:
+        return None
+
+
+def _fetch_quote_crypto_binance(symbol_display: str) -> Optional[Dict[str, Any]]:
+    """加密货币实时行情兜底（Binance 24hr ticker）。"""
+    import os as _os
+
+    pair = _normalize_crypto_pair(symbol_display)
+    if not pair:
+        return None
+    # 默认仅请求 binance.com，避免在受限网络里双端点串行超时导致首包过慢
+    urls = [f"https://api.binance.com/api/v3/ticker/24hr?symbol={quote_plus(pair)}"]
+    try:
+        timeout = float(_os.getenv("INVESTING_CRYPTO_BINANCE_TIMEOUT", "3"))
+    except ValueError:
+        timeout = 3.0
+    timeout = max(1.0, min(timeout, 10.0))
+    for url in urls:
+        try:
+            client_type, client, _ = _get_http_client()
+            resp = client.get(url, timeout=timeout)
+            if resp.status_code != 200:
+                continue
+            data = resp.json()
+            last = _safe_float(data.get("lastPrice"))
+            if last is None:
+                continue
+            open_p = _safe_float(data.get("openPrice"))
+            high_p = _safe_float(data.get("highPrice"))
+            low_p = _safe_float(data.get("lowPrice"))
+            prev_close = _safe_float(data.get("prevClosePrice"))
+            ch = _safe_float(data.get("priceChange"))
+            chp = _safe_float(data.get("priceChangePercent"))
+            volume = _safe_float(data.get("volume"))
+            close_time = data.get("closeTime")
+            market_date = ""
+            if isinstance(close_time, (int, float)):
+                dt = datetime.fromtimestamp(float(close_time) / 1000.0, tz=timezone.utc)
+                market_date = dt.strftime("%Y-%m-%d %H:%M:%S")
+            row = {
+                "symbol": symbol_display,
+                "lp": last,
+                "open_price": open_p,
+                "high_price": high_p,
+                "low_price": low_p,
+                "prev_close_price": prev_close,
+                "ch": ch,
+                "chp": chp,
+                "volume": volume,
+                "date": market_date or _quote_updated_at(),
+                "updated_at": _quote_updated_at(),
+            }
+            return _prefer_updated_at_for_quote(row)
+        except Exception:
+            continue
+    return None
+
+
+_STOOQ_INDEX_SYMBOL_MAP: Dict[str, str] = {
+    "IXIC": "^NDQ",
+    "NASDAQ": "^NDQ",
+    "NDX": "^NDQ",
+    "SPX": "^SPX",
+    "S&P500": "^SPX",
+    "DJI": "^DJI",
+    "DOWJONES": "^DJI",
+}
+
+
+def _is_sse_index_symbol(symbol: str) -> bool:
+    """判断是否为上证综指常见写法。"""
+    if not symbol or not isinstance(symbol, str):
+        return False
+    s = symbol.strip().upper()
+    return s in {"000001", "000001.SH", "000001.SS", "SSE", "SSEC", "SH000001", "上证指数"}
+
+
+def _fetch_quote_sse_official(symbol_display: str) -> Optional[Dict[str, Any]]:
+    """上交所官方接口兜底（上证指数 000001）。"""
+    if not _is_sse_index_symbol(symbol_display):
+        return None
+    url = "http://yunhq.sse.com.cn:32041/v1/sh1/dayk/000001?begin=-2&end=-1&period=day"
+    headers = {
+        "Referer": "http://www.sse.com.cn/",
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "application/json, text/plain, */*",
+    }
+    try:
+        client_type, client, _ = _get_http_client()
+        if client_type == "curl_cffi":
+            resp = client.get(url, headers=headers, timeout=10)
+        else:
+            resp = client.get(url, headers=headers, timeout=10)
+        if resp.status_code != 200:
+            return None
+        data = resp.json()
+        kl = data.get("kline")
+        if not isinstance(kl, list) or not kl:
+            return None
+        last = kl[-1]
+        prev = kl[-2] if len(kl) >= 2 else None
+        if not isinstance(last, list) or len(last) < 5:
+            return None
+        open_p = _safe_float(last[1])
+        high_p = _safe_float(last[2])
+        low_p = _safe_float(last[3])
+        close = _safe_float(last[4])
+        volume = _safe_float(last[5]) if len(last) > 5 else None
+        if close is None:
+            return None
+        prev_close = _safe_float(prev[4]) if isinstance(prev, list) and len(prev) > 4 else open_p
+        ch: Optional[float] = None
+        chp: Optional[float] = None
+        if prev_close not in (None, 0):
+            ch = round(close - float(prev_close), 6)
+            chp = round(ch / float(prev_close) * 100, 4)
+        date_raw = str(last[0]) if len(last) > 0 else ""
+        market_date = (
+            f"{date_raw[0:4]}-{date_raw[4:6]}-{date_raw[6:8]} 15:00:00"
+            if re.match(r"^\d{8}$", date_raw)
+            else ""
+        )
+        out = {
+            "symbol": symbol_display,
+            "lp": close,
+            "open_price": open_p,
+            "high_price": high_p,
+            "low_price": low_p,
+            "prev_close_price": prev_close,
+            "ch": ch,
+            "chp": chp,
+            "volume": volume,
+            "date": market_date or _quote_updated_at(),
+            "updated_at": _quote_updated_at(),
+        }
+        return _prefer_updated_at_for_quote(out)
+    except Exception:
+        return None
+
+
+def _normalize_stooq_symbol(item_id: str, symbol: str) -> str:
+    """将输入 symbol 规范为 Stooq 代码。"""
+    if not symbol or not isinstance(symbol, str):
+        return ""
+    s = symbol.strip().upper()
+    if item_id == "investing_stock_global":
+        if re.match(r"^[A-Z][A-Z0-9\.-]{0,9}$", s):
+            us_sym = _US_STOCK_TYPO_MAP.get(s.split(".")[0], s.split(".")[0])
+            return f"{us_sym.lower()}.us"
+        return ""
+    if item_id == "investing_index":
+        return _STOOQ_INDEX_SYMBOL_MAP.get(s, "")
+    if item_id == "investing_crypto":
+        pair = _normalize_crypto_pair(s)
+        if pair.endswith("USDT"):
+            return f"{pair[:-4]}.v".lower()
+    return ""
+
+
+def _fetch_quote_stooq(symbol_display: str, item_id: str) -> Optional[Dict[str, Any]]:
+    """Stooq 行情兜底（主要用于指数，且不依赖腾讯）。"""
+    stooq_symbol = _normalize_stooq_symbol(item_id, symbol_display)
+    if not stooq_symbol:
+        return None
+    url = f"https://stooq.com/q/l/?s={quote_plus(stooq_symbol)}&f=sd2t2ohlcv&h&e=csv"
+    try:
+        client_type, client, _ = _get_http_client()
+        if client_type == "curl_cffi":
+            resp = client.get(url, timeout=10)
+        else:
+            resp = client.get(url, timeout=10)
+        if resp.status_code != 200:
+            return None
+        rows = list(csv.DictReader(io.StringIO(resp.text.strip())))
+        if not rows:
+            return None
+        r0 = rows[0]
+        close = _safe_float(r0.get("Close"))
+        if close is None:
+            return None
+        open_p = _safe_float(r0.get("Open"))
+        high_p = _safe_float(r0.get("High"))
+        low_p = _safe_float(r0.get("Low"))
+        volume = _safe_float(r0.get("Volume"))
+        d = str(r0.get("Date") or "").strip()
+        t = str(r0.get("Time") or "").strip()
+        market_date = f"{d} {t}".strip() if d and d != "N/D" else ""
+        out = {
+            "symbol": symbol_display,
+            "lp": close,
+            "open_price": open_p,
+            "high_price": high_p,
+            "low_price": low_p,
+            "prev_close_price": open_p,
+            "ch": None if open_p is None else round(close - open_p, 6),
+            "chp": None if open_p in (None, 0) else round((close - open_p) / open_p * 100, 4),
+            "volume": volume,
+            "date": market_date or _quote_updated_at(),
+            "updated_at": _quote_updated_at(),
+        }
+        return _prefer_updated_at_for_quote(out)
     except Exception:
         return None
 
@@ -750,6 +1024,22 @@ def fetch_investing_quotes(
         from_date = (today - timedelta(days=2)).strftime("%Y-%m-%d")
         out: List[Dict[str, Any]] = []
         for sym in symbols:
+            if item_id == "investing_crypto":
+                crypto_row = _fetch_quote_crypto_binance(sym)
+                if crypto_row is not None and _quote_has_price(crypto_row):
+                    out.append(crypto_row)
+                    logger.info("investing quotes: %s 通过 Binance 回退成功", sym)
+                else:
+                    # 按需求：加密货币不走腾讯兜底，先尝试 Binance，再尝试 Stooq。
+                    stooq_row = _fetch_quote_stooq(sym, item_id)
+                    if stooq_row is not None and _quote_has_price(stooq_row):
+                        out.append(stooq_row)
+                        logger.info("investing quotes: %s 通过 Stooq 回退成功", sym)
+                    else:
+                        logger.warning("investing quotes: %s Binance/Stooq 均无数据，且不使用腾讯兜底", sym)
+                continue
+
+            no_tencent_fallback = item_id in {"investing_index"}
             is_a_share = item_id == "investing_stock_global" and _is_a_share_symbol(sym)
             is_cn_stock = item_id == "investing_stock_global" and _is_china_stock_symbol(sym)
             tid = _resolve_symbol_to_investing_id(item_id, sym, exchange=exchange)
@@ -780,6 +1070,20 @@ def fetch_investing_quotes(
                     logger.warning("investing quotes: invalid A-share symbol=%s", sym)
                 if out and out[-1].get("symbol") == sym:
                     continue
+
+            if no_tencent_fallback:
+                sse_row = _fetch_quote_sse_official(sym)
+                if sse_row is not None and _quote_has_price(sse_row):
+                    out.append(sse_row)
+                    logger.info("investing quotes: %s 通过上交所官方接口回退成功", sym)
+                    continue
+                stooq_row = _fetch_quote_stooq(sym, item_id)
+                if stooq_row is not None and _quote_has_price(stooq_row):
+                    out.append(stooq_row)
+                    logger.info("investing quotes: %s 通过 Stooq 回退成功", sym)
+                    continue
+                logger.warning("investing quotes: %s 不使用腾讯兜底", sym)
+                continue
 
             # 非 A 股，或 A 股 AKShare 回退失败：统一走腾讯行情兜底
             tx_row = _fetch_quote_tencent(sym, item_id)
