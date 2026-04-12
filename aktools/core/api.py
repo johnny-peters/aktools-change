@@ -44,6 +44,7 @@ logger.addHandler(handler)
 logger.info('这是一个信息级别的日志消息')
 
 CACHE_TTL_SECONDS = 60
+INVESTING_CACHE_TTL_SECONDS = 180
 _cache_lock = Lock()
 _cache: Dict[Tuple[str, str], Dict[str, Any]] = {}
 
@@ -69,14 +70,22 @@ def _make_cache_key(item_id: str, request: Request) -> Tuple[str, str]:
     return item_id, symbol
 
 
-def _get_cached_content(cache_key: Tuple[str, str], allow_stale: bool = False) -> Optional[Any]:
+def _cache_ttl_for_item(item_id: str) -> int:
+    if is_investing_item(item_id):
+        return INVESTING_CACHE_TTL_SECONDS
+    return CACHE_TTL_SECONDS
+
+
+def _get_cached_content(
+    cache_key: Tuple[str, str], allow_stale: bool = False, ttl_seconds: int = CACHE_TTL_SECONDS
+) -> Optional[Any]:
     with _cache_lock:
         entry = _cache.get(cache_key)
         if not entry:
             return None
         if allow_stale:
             return entry["content"]
-        if time.time() - entry["timestamp"] <= CACHE_TTL_SECONDS:
+        if time.time() - entry["timestamp"] <= ttl_seconds:
             return entry["content"]
         return None
 
@@ -124,7 +133,8 @@ def root(
     :rtype: json
     """
     cache_key = _make_cache_key(item_id, request)
-    cached_content = _get_cached_content(cache_key)
+    cache_ttl = _cache_ttl_for_item(item_id)
+    cached_content = _get_cached_content(cache_key, ttl_seconds=cache_ttl)
     if cached_content is not None:
         return JSONResponse(status_code=status.HTTP_200_OK, content=cached_content)
 
@@ -147,7 +157,7 @@ def root(
         )
 
     if item_id not in interface_list:
-        cached_content = _get_cached_content(cache_key, allow_stale=True)
+        cached_content = _get_cached_content(cache_key, allow_stale=True, ttl_seconds=cache_ttl)
         if cached_content is not None:
             return JSONResponse(status_code=status.HTTP_200_OK, content=cached_content)
         return JSONResponse(
@@ -164,7 +174,7 @@ def root(
         _set_cache_content(cache_key, content)
         return JSONResponse(status_code=status.HTTP_200_OK, content=content)
 
-    cached_content = _get_cached_content(cache_key, allow_stale=True)
+    cached_content = _get_cached_content(cache_key, allow_stale=True, ttl_seconds=cache_ttl)
     if cached_content is not None:
         return JSONResponse(status_code=status.HTTP_200_OK, content=cached_content)
 
@@ -205,7 +215,8 @@ def root(request: Request, item_id: str):
     :rtype: json
     """
     cache_key = _make_cache_key(item_id, request)
-    cached_content = _get_cached_content(cache_key)
+    cache_ttl = _cache_ttl_for_item(item_id)
+    cached_content = _get_cached_content(cache_key, ttl_seconds=cache_ttl)
     if cached_content is not None:
         logger.info(f"命中缓存: {item_id}")
         return JSONResponse(status_code=status.HTTP_200_OK, content=cached_content)
@@ -232,7 +243,7 @@ def root(request: Request, item_id: str):
     decode_params = urllib.parse.unquote(str(request.query_params))
     if item_id not in interface_list:
         logger.info("未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz")
-        cached_content = _get_cached_content(cache_key, allow_stale=True)
+        cached_content = _get_cached_content(cache_key, allow_stale=True, ttl_seconds=cache_ttl)
         if cached_content is not None:
             logger.info(f"接口不可用，返回缓存: {item_id}")
             return JSONResponse(status_code=status.HTTP_200_OK, content=cached_content)
@@ -262,7 +273,7 @@ def root(request: Request, item_id: str):
         logger.info(f"获取到 {item_id} 的数据")
         return JSONResponse(status_code=status.HTTP_200_OK, content=content)
 
-    cached_content = _get_cached_content(cache_key, allow_stale=True)
+    cached_content = _get_cached_content(cache_key, allow_stale=True, ttl_seconds=cache_ttl)
     if cached_content is not None:
         logger.info(f"抓取失败，返回缓存: {item_id}")
         return JSONResponse(status_code=status.HTTP_200_OK, content=cached_content)

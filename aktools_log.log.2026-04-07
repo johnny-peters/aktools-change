@@ -1,0 +1,1941 @@
+2026-04-07 13:00:44,681 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-04-07 13:00:44,724 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-04-07 13:00:44,724 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-04-07 13:00:45,534 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:45,542 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:46,394 - AKToolsLog - ERROR - investing list investing_crypto failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:46,394 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:47,237 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:47,238 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:48,129 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:48,129 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:48,933 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:48,933 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:49,776 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:49,777 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:50,654 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:50,654 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:51,486 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:51,487 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:52,348 - AKToolsLog - ERROR - investing list investing_index failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:52,350 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:53,289 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:53,290 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:54,104 - AKToolsLog - ERROR - investing list investing_stock_global failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 284, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:54,104 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:54,903 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:54,904 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:55,746 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:55,746 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:56,588 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:56,588 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:57,416 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:57,417 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:58,309 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:58,312 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:59,124 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:00:59,125 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:01:00,286 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:01:00,287 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:01:01,154 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:01:01,155 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:01:01,988 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:01:01,989 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:01:02,000 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-04-07 13:01:02,884 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:01:03,043 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:01:03,043 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:01:03,909 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:01:04,046 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:01:04,728 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFT
+2026-04-07 13:01:04,770 - AKToolsLog - INFO - investing quotes: MSFT 通过腾讯行情回退成功
+2026-04-07 13:01:04,770 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:01:04,800 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-04-07 13:01:05,647 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:01:06,400 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:01:07,127 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 900, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 242, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 225, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:22,409 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-04-07 13:06:22,437 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-04-07 13:06:22,437 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-04-07 13:06:23,192 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:23,194 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:23,978 - AKToolsLog - WARNING - investing list investing_crypto fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:23,978 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-04-07 13:06:24,792 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:24,793 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:25,585 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:25,585 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:26,350 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:26,351 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:27,161 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:27,161 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:27,953 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:27,953 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:06:28,780 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:28,781 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:06:29,590 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:29,590 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:06:30,363 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:30,363 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:06:31,219 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:31,219 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:06:32,011 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:32,013 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:32,811 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:32,811 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:33,615 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:33,620 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:34,386 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:34,387 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:35,221 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:35,223 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:36,045 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:36,045 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:36,877 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:36,877 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:37,735 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:37,740 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:38,578 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:38,579 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:38,587 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-04-07 13:06:39,512 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:06:39,709 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:06:39,709 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:06:40,523 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:06:40,673 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:06:41,379 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFT
+2026-04-07 13:06:41,420 - AKToolsLog - INFO - investing quotes: MSFT 通过腾讯行情回退成功
+2026-04-07 13:06:41,420 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:06:41,449 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-04-07 13:06:42,230 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:42,904 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:06:43,576 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1032, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:51,475 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-04-07 13:10:51,503 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-04-07 13:10:51,503 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-04-07 13:10:52,429 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:52,430 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:53,356 - AKToolsLog - WARNING - investing list investing_crypto fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:53,356 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-04-07 13:10:54,273 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:54,274 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:55,261 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:55,261 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:56,235 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:56,235 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:57,159 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:57,160 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:58,154 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:58,154 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:10:59,117 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:10:59,117 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:11:00,419 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:00,419 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:11:01,450 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:01,450 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:11:02,375 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:02,376 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:11:03,305 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:03,306 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:04,267 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:04,269 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:05,183 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:05,183 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:06,186 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:06,186 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:07,154 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:07,154 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:08,086 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:08,087 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:09,070 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:09,070 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:10,022 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:10,024 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:10,990 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:10,991 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:10,994 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-04-07 13:11:11,912 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:11:12,120 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:11:12,120 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:11:13,115 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:11:13,245 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:11:14,039 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFT
+2026-04-07 13:11:14,080 - AKToolsLog - INFO - investing quotes: MSFT 通过腾讯行情回退成功
+2026-04-07 13:11:14,080 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:11:14,109 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-04-07 13:11:15,068 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:15,833 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:11:16,672 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:16:57,765 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-04-07 13:16:57,792 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-04-07 13:16:57,792 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-04-07 13:16:58,785 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:16:58,786 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:16:59,995 - AKToolsLog - WARNING - investing list investing_crypto fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:16:59,996 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-04-07 13:17:00,822 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:00,822 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:01,639 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:01,640 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:02,434 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:02,434 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:03,225 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:03,225 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:04,072 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:04,072 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:17:04,933 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:04,933 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:17:05,804 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:05,804 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:17:06,641 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:06,641 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:17:07,459 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:07,460 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:17:08,342 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:08,346 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:09,237 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:09,238 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:10,134 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:10,135 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:11,018 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:11,019 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:11,908 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:11,909 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:12,788 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:12,788 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:13,637 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:13,638 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:14,555 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:14,556 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:15,450 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:15,451 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:15,455 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-04-07 13:17:16,332 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:17:16,487 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:17:16,487 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:17:17,416 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:17:17,559 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:17:18,352 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFT
+2026-04-07 13:17:18,401 - AKToolsLog - INFO - investing quotes: MSFT 通过腾讯行情回退成功
+2026-04-07 13:17:18,401 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:17:18,432 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-04-07 13:17:19,393 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:20,217 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:17:21,001 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:18:57,483 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-04-07 13:18:57,510 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-04-07 13:18:57,510 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-04-07 13:18:58,404 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:18:58,404 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:18:59,264 - AKToolsLog - WARNING - investing list investing_crypto fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:18:59,264 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-04-07 13:19:00,497 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:00,497 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:01,359 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:01,359 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:02,245 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:02,245 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:03,091 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:03,092 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:04,018 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:04,019 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:19:04,909 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:04,909 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:05,780 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:05,781 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:19:06,676 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:06,676 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:07,525 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:07,525 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:08,433 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:08,434 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:09,354 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:09,355 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:10,239 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:10,240 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:11,135 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:11,136 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:12,080 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:12,080 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:13,038 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:13,039 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:13,977 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:13,977 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:14,949 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:14,949 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:15,923 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:15,924 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:15,930 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-04-07 13:19:16,963 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:19:17,172 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:19:17,172 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:18,125 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:19:18,302 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:19:19,150 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFT
+2026-04-07 13:19:19,197 - AKToolsLog - INFO - investing quotes: MSFT 通过腾讯行情回退成功
+2026-04-07 13:19:19,197 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:19,229 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-04-07 13:19:20,261 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:21,124 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:21,923 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:33,483 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-04-07 13:19:33,506 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-04-07 13:19:33,506 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-04-07 13:19:34,550 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:34,553 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:35,630 - AKToolsLog - WARNING - investing list investing_crypto fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:35,630 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-04-07 13:19:36,724 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:36,724 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:37,735 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:37,736 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:38,842 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:38,843 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:39,857 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:39,857 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:40,888 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:40,888 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:19:41,860 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:41,860 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:42,842 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:42,842 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:19:43,784 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:43,784 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:44,766 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:44,766 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:45,848 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:45,848 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:46,837 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:46,838 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:47,927 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:47,929 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:49,016 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:49,017 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:50,259 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:50,260 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:51,274 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:51,274 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:52,284 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:52,285 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:53,418 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:53,418 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:54,617 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:54,618 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:19:54,633 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-04-07 13:19:55,675 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:19:55,927 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:19:55,928 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:57,119 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:19:57,327 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:19:58,340 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFT
+2026-04-07 13:19:58,383 - AKToolsLog - INFO - investing quotes: MSFT 通过腾讯行情回退成功
+2026-04-07 13:19:58,383 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:19:58,428 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-04-07 13:19:59,474 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:20:00,882 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:20:01,843 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:41,774 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-04-07 13:22:41,795 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-04-07 13:22:41,795 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-04-07 13:22:42,620 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:42,620 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:43,569 - AKToolsLog - WARNING - investing list investing_crypto fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:43,570 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-04-07 13:22:44,431 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:44,433 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:45,263 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:45,263 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:46,183 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:46,184 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:47,050 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:47,052 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:47,865 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:47,865 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:22:48,805 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:48,806 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:22:49,711 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:49,712 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 13:22:50,564 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:50,564 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:22:51,463 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:51,464 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:22:52,305 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:52,305 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:53,192 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:53,192 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:54,050 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:54,052 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:54,933 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:54,934 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:55,823 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:55,823 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:56,751 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:56,752 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:57,684 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:57,685 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:58,633 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:58,633 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:59,522 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:59,524 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 13:22:59,524 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-04-07 13:23:00,852 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:23:01,045 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:23:01,046 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:23:02,067 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 13:23:02,209 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 13:23:03,066 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFT
+2026-04-07 13:23:03,108 - AKToolsLog - INFO - investing quotes: MSFT 通过腾讯行情回退成功
+2026-04-07 13:23:03,108 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 13:23:03,147 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-04-07 13:23:04,038 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:23:04,846 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 13:23:05,616 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1108, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:15:56,440 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-04-07 14:15:56,462 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-04-07 14:15:56,462 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-04-07 14:15:57,407 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:15:57,408 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:15:58,252 - AKToolsLog - WARNING - investing list investing_crypto fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:15:58,252 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-04-07 14:15:59,120 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:15:59,122 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:00,461 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:00,462 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:01,313 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:01,314 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:02,206 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:02,207 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:03,103 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:03,103 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 14:16:04,042 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:04,043 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:16:04,984 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:04,984 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 14:16:05,818 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:05,818 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:16:06,718 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:06,718 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:16:07,645 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:07,645 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:08,482 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:08,483 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:09,319 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:09,321 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:10,198 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:10,198 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:11,145 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:11,145 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:12,013 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:12,014 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:12,848 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:12,849 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:13,723 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:13,724 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:14,587 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:14,588 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:14,599 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-04-07 14:16:15,531 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 14:16:15,762 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 14:16:15,762 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:16:16,653 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 14:16:16,794 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 14:16:17,641 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFT
+2026-04-07 14:16:17,686 - AKToolsLog - INFO - investing quotes: MSFT 通过腾讯行情回退成功
+2026-04-07 14:16:17,686 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:16:17,717 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-04-07 14:16:18,571 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:19,352 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:16:20,178 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1113, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:35,794 - AKToolsLog - INFO - 这是一个信息级别的日志消息
+2026-04-07 14:24:35,819 - AKToolsLog - INFO - Investing: 使用 curl_cffi 作为 HTTP 客户端（可绕过 Cloudflare 403）
+2026-04-07 14:24:35,819 - AKToolsLog - INFO - Investing: curl_cffi impersonate=chrome136
+2026-04-07 14:24:36,813 - AKToolsLog - ERROR - investing list investing_bond failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:36,813 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:37,670 - AKToolsLog - WARNING - investing list investing_crypto fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:37,670 - AKToolsLog - INFO - 获取到 Investing investing_crypto 的数据
+2026-04-07 14:24:38,590 - AKToolsLog - ERROR - investing list investing_etf failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:38,590 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:39,459 - AKToolsLog - ERROR - investing list investing_fund failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:39,460 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:40,391 - AKToolsLog - ERROR - investing list investing_futures failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:40,391 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:41,338 - AKToolsLog - ERROR - investing list investing_fx failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 286, in fetch_investing_list
+    res = _request_to_investing(endpoint="search", params=kwargs)  # type: ignore
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:41,339 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:42,267 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:42,267 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 14:24:43,143 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:43,143 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:24:44,077 - AKToolsLog - WARNING - investing list investing_index fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:44,077 - AKToolsLog - INFO - 获取到 Investing investing_index 的数据
+2026-04-07 14:24:45,018 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:45,018 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:24:45,924 - AKToolsLog - WARNING - investing list investing_stock_global fallback to local catalog due to error: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:45,925 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:24:46,863 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:46,864 - AKToolsLog - INFO - Investing 数据拉取失败: investing_bond - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:47,794 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:47,795 - AKToolsLog - INFO - Investing 数据拉取失败: investing_crypto - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:48,719 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:48,719 - AKToolsLog - INFO - Investing 数据拉取失败: investing_etf - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:49,673 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:49,674 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fund - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:50,621 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:50,621 - AKToolsLog - INFO - Investing 数据拉取失败: investing_futures - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:51,570 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:51,571 - AKToolsLog - INFO - Investing 数据拉取失败: investing_fx - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:52,580 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:52,580 - AKToolsLog - INFO - Investing 数据拉取失败: investing_index - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:53,457 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:53,459 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:54,364 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:54,365 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:54,374 - AKToolsLog - INFO - Investing 数据拉取失败: investing_stock_global - investing_id 必须为数字
+2026-04-07 14:24:55,268 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 14:24:55,415 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 14:24:55,415 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:24:56,339 - AKToolsLog - WARNING - investing quotes: no id for symbol=AAPL
+2026-04-07 14:24:56,512 - AKToolsLog - INFO - investing quotes: AAPL 通过腾讯行情回退成功
+2026-04-07 14:24:57,320 - AKToolsLog - WARNING - investing quotes: no id for symbol=MSFT
+2026-04-07 14:24:57,371 - AKToolsLog - INFO - investing quotes: MSFT 通过腾讯行情回退成功
+2026-04-07 14:24:57,371 - AKToolsLog - INFO - 获取到 Investing investing_stock_global 的数据
+2026-04-07 14:24:57,421 - AKToolsLog - INFO - 未找到该接口，请升级 AKShare 到最新版本并在文档中确认该接口的使用方式：https://akshare.akfamily.xyz
+2026-04-07 14:24:58,423 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:24:59,247 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.
+2026-04-07 14:25:00,440 - AKToolsLog - ERROR - investing historical id=6408 failed: Request to Investing.com API failed with error code: 403.
+Traceback (most recent call last):
+  File "E:\projects\aktools\aktools\core\investing.py", line 1118, in fetch_investing_historical
+    info = _investing_info(investing_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 244, in _investing_info
+    return _request_to_investing(endpoint="symbols", params={"symbol": investing_id})  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\projects\aktools\aktools\core\investing.py", line 227, in _request_to_investing
+    raise ConnectionError(
+ConnectionError: Request to Investing.com API failed with error code: 403.

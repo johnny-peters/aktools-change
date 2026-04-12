@@ -29,6 +29,35 @@ _CURL_SESSION: Optional[Any] = None
 _CURL_IMPERSONATE: Optional[str] = None
 
 
+def _env_float(name: str, default: float, min_v: float, max_v: float) -> float:
+    import os as _os
+
+    raw = _os.getenv(name, str(default)).strip()
+    try:
+        value = float(raw)
+    except (TypeError, ValueError):
+        value = default
+    return max(min_v, min(value, max_v))
+
+
+def _env_int(name: str, default: int, min_v: int, max_v: int) -> int:
+    import os as _os
+
+    raw = _os.getenv(name, str(default)).strip()
+    try:
+        value = int(raw)
+    except (TypeError, ValueError):
+        value = default
+    return max(min_v, min(value, max_v))
+
+
+def _env_bool(name: str, default: bool = False) -> bool:
+    import os as _os
+
+    raw = _os.getenv(name, "1" if default else "0").strip().lower()
+    return raw in {"1", "true", "yes", "on"}
+
+
 def _get_http_client():
     import os as _os
 
@@ -170,11 +199,12 @@ def _build_headers() -> Dict[str, str]:
 
 
 def _request_to_investing(
-    endpoint: str, params: Dict[str, Any], timeout: int = 12
+    endpoint: str, params: Dict[str, Any], timeout: float = 6
 ) -> Union[Dict[str, Any], List[Dict[str, Any]]]:
     import os as _os
 
     global _CURL_SESSION, _CURL_IMPERSONATE
+    timeout = _env_float("INVESTING_REQUEST_TIMEOUT", timeout, 2.0, 15.0)
     url = f"https://tvc6.investing.com/{uuid4().hex}/0/0/0/0/{endpoint}"
     client_type, client, impersonate = _get_http_client()
     if client_type == "curl_cffi":
@@ -197,14 +227,17 @@ def _request_to_investing(
                 if env_imp:
                     candidates = [env_imp] + [x for x in candidates if x != env_imp]
                 if impersonate:
-                    candidates = [x for x in candidates if x != impersonate] + [impersonate]
+                    candidates = [x for x in candidates if x != impersonate]
+                max_retries = _env_int("INVESTING_403_MAX_RETRIES", 1, 0, 2)
+                retry_timeout = _env_float("INVESTING_403_RETRY_TIMEOUT", 2.5, 1.0, 8.0)
+                candidates = candidates[:max_retries]
                 for imp in candidates:
                     try:
                         session = curl_requests.Session(impersonate=imp)
                         retry_resp = session.get(
                             url,
                             params=params,
-                            timeout=timeout,
+                            timeout=min(timeout, retry_timeout),
                             headers={
                                 "Referer": "https://cn.investing.com/",
                                 "Origin": "https://cn.investing.com",
@@ -466,10 +499,10 @@ _FALLBACK_LIST_CATALOG: Dict[str, List[Dict[str, str]]] = {
         {"symbol": "000001.SH", "name": "Shanghai Composite", "exchange": "SSE", "type": "Index"},
     ],
     "investing_crypto": [
-        {"symbol": "BTC", "name": "Bitcoin", "exchange": "Binance", "type": "Crypto"},
-        {"symbol": "ETH", "name": "Ethereum", "exchange": "Binance", "type": "Crypto"},
-        {"symbol": "BNB", "name": "BNB", "exchange": "Binance", "type": "Crypto"},
-        {"symbol": "SOL", "name": "Solana", "exchange": "Binance", "type": "Crypto"},
+        {"symbol": "BTC", "name": "Bitcoin", "exchange": "Fallback", "type": "Crypto"},
+        {"symbol": "ETH", "name": "Ethereum", "exchange": "Fallback", "type": "Crypto"},
+        {"symbol": "BNB", "name": "BNB", "exchange": "Fallback", "type": "Crypto"},
+        {"symbol": "SOL", "name": "Solana", "exchange": "Fallback", "type": "Crypto"},
     ],
 }
 
@@ -653,6 +686,10 @@ def _fetch_quote_tencent(symbol_display: str, item_id: str) -> Optional[Dict[str
 def _fetch_quote_crypto_binance(symbol_display: str) -> Optional[Dict[str, Any]]:
     """加密货币实时行情兜底（Binance 24hr ticker）。"""
     import os as _os
+
+    # 国内网络场景默认停用 Binance，避免不可达导致串行超时。
+    if not _env_bool("INVESTING_CRYPTO_USE_BINANCE", default=False):
+        return None
 
     pair = _normalize_crypto_pair(symbol_display)
     if not pair:
@@ -1030,13 +1067,13 @@ def fetch_investing_quotes(
                     out.append(crypto_row)
                     logger.info("investing quotes: %s 通过 Binance 回退成功", sym)
                 else:
-                    # 按需求：加密货币不走腾讯兜底，先尝试 Binance，再尝试 Stooq。
+                    # 加密货币不走腾讯兜底；Binance 默认停用，统一回退到 Stooq。
                     stooq_row = _fetch_quote_stooq(sym, item_id)
                     if stooq_row is not None and _quote_has_price(stooq_row):
                         out.append(stooq_row)
                         logger.info("investing quotes: %s 通过 Stooq 回退成功", sym)
                     else:
-                        logger.warning("investing quotes: %s Binance/Stooq 均无数据，且不使用腾讯兜底", sym)
+                        logger.warning("investing quotes: %s Stooq 无数据，且不使用腾讯兜底", sym)
                 continue
 
             no_tencent_fallback = item_id in {"investing_index"}

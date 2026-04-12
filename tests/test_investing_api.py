@@ -8,6 +8,7 @@ Investing 接口测试：覆盖所有 Investing API 及 8 类资产类型。
 import pytest
 from fastapi.testclient import TestClient
 
+import aktools.core.investing as investing_core
 from aktools.core.investing import INVESTING_ITEM_IDS
 from aktools.main import app
 
@@ -159,6 +160,18 @@ def test_investing_public_quotes_multiple_symbols() -> None:
     assert resp.status_code in (200, 502), resp.text
     if resp.status_code == 200:
         assert isinstance(resp.json(), list)
+
+
+def test_crypto_binance_disabled_by_default(monkeypatch: pytest.MonkeyPatch) -> None:
+    """默认停用 Binance：应直接返回 None，且不触发 HTTP 客户端请求。"""
+    monkeypatch.setenv("INVESTING_CRYPTO_USE_BINANCE", "0")
+
+    def _unexpected_http_client():
+        raise AssertionError("Binance 停用时不应创建 HTTP 客户端")
+
+    monkeypatch.setattr(investing_core, "_get_http_client", _unexpected_http_client)
+    row = investing_core._fetch_quote_crypto_binance("BTC")
+    assert row is None
 
 
 @pytest.mark.parametrize("item_id", sorted(INVESTING_ITEM_IDS))

@@ -226,20 +226,20 @@ Authorization: Bearer akshare
 
 数据来源为 [cn.investing.com](https://cn.investing.com/)（通过 [investiny](https://pypi.org/project/investiny/) 访问公开数据，无需登录）。  
 与 AKShare 接口共用同一 URL 形式：`GET {BASE_URL}/api/public/{item_id}` 或 `GET {BASE_URL}/api/private/{item_id}`，**item_id** 使用下表所列的固定名称。  
-**限频与缓存**：建议控制请求频率，避免封禁；服务端对同一请求（api + symbol/investing_id）有 1 分钟热点缓存，爬取失败时会返回最近一次成功缓存（若有）。
+**限频与缓存**：建议控制请求频率，避免封禁；服务端对同一 Investing 请求（item_id + query）默认有 3 分钟热点缓存，爬取失败时会返回最近一次成功缓存（若有）。
 
 ### Investing 接口清单
 
-| item_id                | 说明                       |
-| ---------------------- | -------------------------- |
-| investing_index        | 指数                       |
-| investing_stock_global | 全球股票；A 股（如 600519.SH、002340.SZ）自动从 AKShare 获取 |
-| investing_futures      | 期货                       |
-| investing_fx           | 货币（外汇）               |
-| investing_etf          | 交易所交易基金             |
-| investing_bond         | 国债                       |
-| investing_fund         | 基金                       |
-| investing_crypto       | 虚拟货币                   |
+| item_id | 说明 |
+| --- | --- |
+| investing_index | 指数 |
+| investing_stock_global | 全球股票；A 股（如 `600519.SH`、`002340.SZ`）自动从 AKShare 获取 |
+| investing_futures | 期货 |
+| investing_fx | 货币（外汇） |
+| investing_etf | 交易所交易基金 |
+| investing_bond | 国债 |
+| investing_fund | 基金 |
+| investing_crypto | 虚拟货币 |
 
 ### Investing 官网页面与 API 对应
 
@@ -254,7 +254,8 @@ Authorization: Bearer akshare
 ### 三种用法
 
 1. **拉取实时行情（quotes）**  
-   传入 `symbols` 时，先按类型将资产名称/代码解析为 Investing 的 investing_id，再取**最近一分钟 K 线**拼出含最新价、涨跌等字段的实时行情。
+   传入 `symbols` 时，先按类型将资产名称/代码解析为 Investing 的 investing_id，再取**最近一分钟 K 线**拼出含最新价、涨跌等字段的实时行情。  
+   `investing_crypto` 在国内网络场景默认停用 Binance API，直接使用 Stooq 等兜底来源。
 
    **Query 参数**：
 
@@ -309,13 +310,13 @@ Authorization: Bearer akshare
 
    **Query 参数**：
 
-   | 参数名       | 类型          | 必填 | 说明                                              |
-   | ------------ | ------------- | ---- | ------------------------------------------------- |
-   | investing_id | string        | 是*  | Investing 资产 ID（可从列表接口的 `ticker` 取得） |
-   | symbol       | string        | 是*  | A 股代码（如 600519.SH、002340.SZ），与 investing_id 二选一 |
-   | from_date    | string        | 是   | 开始日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD`         |
-   | to_date      | string        | 是   | 结束日期，格式同上                                |
-   | interval     | string/number | 否   | 周期：`D`/`W`/`M`（A 股仅支持日/周/月）          |
+   | 参数名 | 类型 | 必填 | 说明 |
+   | --- | --- | --- | --- |
+   | investing_id | string | 是* | Investing 资产 ID（可从列表接口的 `ticker` 取得） |
+   | symbol | string | 是* | A 股代码（如 `600519.SH`、`002340.SZ`），与 `investing_id` 二选一 |
+   | from_date | string | 是 | 开始日期，支持 `YYYYMMDD` 或 `YYYY-MM-DD` |
+   | to_date | string | 是 | 结束日期，格式同上 |
+   | interval | string/number | 否 | 周期：`D` / `W` / `M`（A 股仅支持日/周/月） |
 
    \* `investing_id` 用于全球股票；`symbol` 用于 A 股（上证/深圳），二者必填其一。
 
